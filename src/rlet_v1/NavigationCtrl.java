@@ -19,7 +19,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Modality;
 /**
  *
  * @author kviro
@@ -32,18 +31,23 @@ public class NavigationCtrl {//singleton pattern
     
     private NavigationCtrl(Stage existingStage){
         
-       stage = existingStage;
-       //load new fxml
-       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NavigationUI.fxml"));
-       Parent root1 = (Parent)fxmlLoader.load();
-        
-       stage.initModality(Modality.APPLICATION_MODAL);
-       stage.setTitle("Main Menu");
-       stage.setScene(new Scene(root1));
-       stage.show();
+        stage = existingStage;
+        try {
+            
+            //load new fxml
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NavigationUI.fxml"));
+            Parent root1 = fxmlLoader.load();
+            
+            //stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Main Menu");
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(NavigationCtrl.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    public static NavigationCtrl getNavigationCtrl(Stage existingStage) 
+    public static NavigationCtrl getNavigationCtrl(Stage existingStage)
     { 
         if (navCtrl == null) {
             

@@ -8,8 +8,15 @@ package rlet_v1;
 /**
  *
  * @author kviro
- * 
  */
 public class NavigationUICtrl {
+    
+    
+    
+    public NavigationUICtrl(){
+        
+        
+        
+    }
     
 }

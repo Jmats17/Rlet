@@ -56,7 +56,6 @@ public class LoginCtrl implements Initializable {
         if(authenticated == true){
             Stage stage = (Stage)passwordField.getScene().getWindow();
             stage.hide(); //hide stage before passing control
-            System.out.println("Stage hidden");
             NavigationCtrl theNavigationCtrl = NavigationCtrl.getNavigationCtrl(stage);
             
         }
