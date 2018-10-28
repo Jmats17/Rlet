@@ -13,7 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
-import javafx.beans.property.StringProperty;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 /**
@@ -32,9 +31,9 @@ public class LoginCtrl implements Initializable {
     
     public LoginCtrl(){
         
-        char[] justinPassword = new char[] {'j', 'm'};
+        char[] justinPassword = new char[] {'j', 'm', '1', '2', '3'};
         Roommate user1 = new Roommate("Justin", justinPassword);
-        char[] kenPassword = new char[] {'k', 'v'};
+        char[] kenPassword = new char[] {'k', 'v', '1', '2', '3'};
         Roommate user2 = new Roommate("Ken", kenPassword);
         
         testList.addUser(user1);
@@ -55,8 +54,9 @@ public class LoginCtrl implements Initializable {
         boolean authenticated = testList.authenticate(username, password);
         
         if(authenticated == true){
-            Stage stage = (Stage) label.getScene().getWindow();
-            //hide stage
+            Stage stage = (Stage)passwordField.getScene().getWindow();
+            stage.hide(); //hide stage before passing control
+            System.out.println("Stage hidden");
             NavigationCtrl theNavigationCtrl = NavigationCtrl.getNavigationCtrl(stage);
             
         }
