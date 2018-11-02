@@ -3,11 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet_v1/NavigationCtrl.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet_v1/RLET_v1.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet_v1/NavigationUI.fxml</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet_v1/LoginUI.fxml</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet_v1/LoginCtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/LoginCtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/TaskList.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/UserList.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/NavigationCtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/NavigationUI.fxml</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/PersistentDataCtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/LoginUI.fxml</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/User.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/PersistentDataCollection.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/Task.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/NavigationUICtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/RLET.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/TaskCtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/Roommate.java</file>
         </group>
     </open-files>
 </project-private>
