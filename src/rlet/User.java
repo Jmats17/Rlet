@@ -36,4 +36,10 @@ public abstract class User implements Serializable{
         
     }
     
+    public TaskList getTaskList(){
+        
+        return taskList;
+        
+    }
+    
 }

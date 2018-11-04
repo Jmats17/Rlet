@@ -20,6 +20,7 @@ public class NavigationCtrl {//singleton pattern
     
     @FXML private Stage stage;
     @FXML private Text actiontarget;
+    
     private static NavigationCtrl theNavigationCntl;
     
     private NavigationCtrl(Stage theExistingStage){

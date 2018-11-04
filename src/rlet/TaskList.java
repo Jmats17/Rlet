@@ -25,19 +25,13 @@ public class TaskList implements Serializable{
     public TaskList(String username){
         
         listOwner = username;
-        this.readDataListFile();
-        
-        if(taskList.isEmpty() || taskList == null){
             
-            this.createTestTaskList();
-            this.writeDataListFile();
-            this.readDataListFile();
-            
-        }
+        this.createTestTaskList();
+           
         
         this.printTaskList();
     }
-    
+   /* 
     public void readDataListFile(){
         FileInputStream fis = null;
         ObjectInputStream in = null;
@@ -71,11 +65,11 @@ public class TaskList implements Serializable{
             ex.printStackTrace();
         }
     }
-    
+  */  
     public void createTestTaskList(){
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 2; i++){
             String testTaskName = "TestTaskname" + i;
-            String testDueDate = "1" + "/" + (i+2) + "/" + "18";
+            String testDueDate = "2018/11/05 10:00:00";
             taskList.add(new Task(testTaskName, testDueDate));
         }
         System.out.println("Test TaskList created");
@@ -83,13 +77,14 @@ public class TaskList implements Serializable{
     }
 
     public void printTaskList(){
-        String output = "User: " + listOwner + "\nTaskList has these tasks: ";
-        System.out.println(output);
+        
+        System.out.println("The user has these tasks");
         for(int i = 0; i < taskList.size(); i++){
             Task currentTask = (Task) taskList.get(i);
-            System.out.println(currentTask.getName());
-            System.out.println(currentTask.getDueDate());
-            System.out.println(currentTask.getStatus());
+            System.out.println("Task Name: " + currentTask.getName());
+            System.out.println("Due Date: " + currentTask.getDueDate());
+            currentTask.getReminderList().printReminderList();
+            System.out.println("Completed: " + currentTask.getStatus() + "\n");
         }
     }
     

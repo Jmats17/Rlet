@@ -6,7 +6,9 @@
 package rlet;
 
 import java.io.Serializable;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  *
  * @author kviro
@@ -14,12 +16,20 @@ import java.io.Serializable;
 public class Task implements Serializable{
     
     private String name;
-    private String dueDate;
+    private Date dueDate;
     private boolean completed = false;
+    private SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    protected ReminderList reminderList; 
     
-    public Task(String n, String d){
+    public Task(String n, String dateString){
         name = n;
-        dueDate = d;
+        try {
+           dueDate = format.parse(dateString); 
+           System.out.println(dueDate); 
+        } catch (ParseException e) { 
+           System.out.println("Unparseable using " + format); 
+        }
+        reminderList = new ReminderList(dueDate);
     }
     
     public String getName(){
@@ -28,7 +38,7 @@ public class Task implements Serializable{
         
     }
     
-    public String getDueDate(){
+    public Date getDueDate(){
         
         return dueDate;
    
@@ -39,4 +49,17 @@ public class Task implements Serializable{
         return completed;
         
     }
+    
+    public void setStatus(){
+        
+        completed = true;
+        
+    }
+    
+    public ReminderList getReminderList(){
+        
+        return reminderList;
+        
+    }
+    
 }

@@ -22,7 +22,7 @@ public class UserList {
     public UserList(){
         
         this.readDataListFile();
-        
+      
         if(userList.isEmpty() || userList == null){
             
             this.createTestUserList();
@@ -83,6 +83,7 @@ public class UserList {
         for(int i = 0; i < userList.size(); i++){
             User currentUser = userList.get(i);
             System.out.println(currentUser.getUsername());
+            currentUser.getTaskList().printTaskList();
         }
     }
     
