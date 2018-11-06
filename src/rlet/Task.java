@@ -16,13 +16,15 @@ import java.util.Date;
 public class Task implements Serializable{
     
     private String name;
+    private String assignedUser;
     private Date dueDate;
     private boolean completed = false;
     private SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     protected ReminderList reminderList; 
     
-    public Task(String n, String dateString){
+    public Task(String n, String dateString, String username){
         name = n;
+        assignedUser = username;
         try {
            dueDate = format.parse(dateString); 
            System.out.println(dueDate); 
@@ -50,9 +52,10 @@ public class Task implements Serializable{
         
     }
     
-    public void setStatus(){
+    public void MarkAsDone(){
         
         completed = true;
+        //ActivityLog.addItem(this);
         
     }
     

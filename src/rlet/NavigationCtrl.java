@@ -15,26 +15,29 @@ import javafx.fxml.FXMLLoader;
  *
  * @author kviro
  */
-public class NavigationCtrl {//singleton pattern
+public class NavigationCtrl {
     
     
     @FXML private Stage stage;
     @FXML private Text actiontarget;
     
-    private static NavigationCtrl theNavigationCntl;
+    private static NavigationCtrl theNavigationCtrl;
+    private String username;
     
     private NavigationCtrl(Stage theExistingStage){
+        
         stage = theExistingStage;
         this.setUpNavigationScene();
         stage.show();
     }
     
     public static NavigationCtrl getNavigationCtrl(Stage theStage){
-        if(theNavigationCntl != null){
-            return theNavigationCntl;
+        
+        if(theNavigationCtrl != null){
+            return theNavigationCtrl;
         }else{
-            theNavigationCntl = new NavigationCtrl(theStage);
-            return theNavigationCntl;
+            theNavigationCtrl = new NavigationCtrl(theStage);
+            return theNavigationCtrl;
         }
     }
     
@@ -55,7 +58,7 @@ public class NavigationCtrl {//singleton pattern
     public void getTaskCtrl(Stage theStage){
         TaskCtrl.getTaskCtrl(theStage);
     }
-    
+   
     public void exit(){
         System.exit(0);
     }

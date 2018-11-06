@@ -70,7 +70,7 @@ public class TaskList implements Serializable{
         for (int i = 0; i < 2; i++){
             String testTaskName = "TestTaskname" + i;
             String testDueDate = "2018/11/05 10:00:00";
-            taskList.add(new Task(testTaskName, testDueDate));
+            taskList.add(new Task(testTaskName, testDueDate, listOwner));
         }
         System.out.println("Test TaskList created");
         //System.out.println("The TaskList is: " + taskList);

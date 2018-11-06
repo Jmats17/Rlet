@@ -16,7 +16,7 @@
                <font>
                   <Font size="12.0" />
                </font></Button>
-            <Button alignment="BOTTOM_CENTER" layoutX="189.0" layoutY="95.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="143.0" text="View Task List">
+            <Button onAction="#handleTaskListButtonAction" alignment="BOTTOM_CENTER" layoutX="189.0" layoutY="95.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="143.0" text="View Task List">
                <font>
                   <Font size="12.0" />
                </font></Button>
@@ -44,7 +44,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="127.0" layoutY="41.0" text=" Justin.">
+            <Label fx:id="username" layoutX="127.0" layoutY="41.0">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

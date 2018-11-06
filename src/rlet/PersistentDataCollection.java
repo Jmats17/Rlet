@@ -14,17 +14,25 @@ import java.io.Serializable;
 public class PersistentDataCollection implements Serializable{
     
     private UserList theUserList;
+    private ActivityLog theActivityLog;
     
-    // All other persistent data will go below here
     
     public PersistentDataCollection(){
         if(theUserList == null){
             theUserList = new UserList();
         }
+        
+        if(theActivityLog == null){
+            theActivityLog = new ActivityLog();
+        }
     }
     
     public UserList getUserList(){
         return theUserList;
+    }
+    
+    public ActivityLog getActivityLog(){
+        return theActivityLog;
     }
     
 }
