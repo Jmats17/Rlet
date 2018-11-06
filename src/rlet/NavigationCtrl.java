@@ -58,6 +58,10 @@ public class NavigationCtrl {
     public void getTaskCtrl(Stage theStage){
         TaskCtrl.getTaskCtrl(theStage);
     }
+    
+    public void getActivityLogCtrl(Stage theStage){
+       ActivityLogCtrl.getActivityLogCtrl(theStage);
+    }
    
     public void exit(){
         System.exit(0);

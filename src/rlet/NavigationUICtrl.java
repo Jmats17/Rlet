@@ -18,6 +18,7 @@ public class NavigationUICtrl {
     
     
     @FXML private Text actiontarget;
+    private static NavigationCtrl theNavigationUICtrl;
     
     public NavigationUICtrl(){
         
@@ -25,12 +26,21 @@ public class NavigationUICtrl {
         
     }
     
-    @FXML protected void handleTaskListButtonAction(ActionEvent event){
+    @FXML protected void handleManageTasksButtonAction(ActionEvent event){
         
         actiontarget.setText("Task list button pressed");
         Stage theStage = (Stage) actiontarget.getScene().getWindow();
         theStage.hide();
         NavigationCtrl.getNavigationCtrl(theStage).getTaskCtrl(theStage);
+        
+    }
+    
+    @FXML protected void handleActivityLogButtonAction(ActionEvent event){
+        
+        actiontarget.setText("Activity Log button pressed");
+        Stage theStage = (Stage) actiontarget.getScene().getWindow();
+        theStage.hide();
+        NavigationCtrl.getNavigationCtrl(theStage).getActivityLogCtrl(theStage);
         
     }
     

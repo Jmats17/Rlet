@@ -22,7 +22,7 @@ public class ActivityLog implements Serializable{
     
     public void addItem(Task t){
         
-        TaskLog.add(t);
+        //TaskLog.add(t);
         
     }
     
