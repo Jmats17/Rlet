@@ -16,7 +16,7 @@ import java.io.ObjectOutputStream;
  */
 public class PersistentDataCtrl {
     
-    private static PersistentDataCtrl thePersistentDataCntl;
+    private static PersistentDataCtrl thePersistentDataCtrl;
     private PersistentDataCollection thePersistentDataCollection;
     private final String EXTERNAL_DATA_PATH = "";
     private final String DATA_FILE_NAME = "AppData.ser";
@@ -31,10 +31,10 @@ public class PersistentDataCtrl {
     }
     
     public static PersistentDataCtrl getPersistentDataCtrl(){
-        if(thePersistentDataCntl == null){
-            thePersistentDataCntl = new PersistentDataCtrl();
+        if(thePersistentDataCtrl == null){
+            thePersistentDataCtrl = new PersistentDataCtrl();
         }
-        return thePersistentDataCntl;
+        return thePersistentDataCtrl;
     }
     
     public PersistentDataCollection getPersistentDataCollection(){

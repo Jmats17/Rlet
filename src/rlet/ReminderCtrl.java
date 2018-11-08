@@ -6,7 +6,6 @@
 package rlet;
 
 import java.io.IOException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,14 +17,13 @@ import javafx.stage.Stage;
  *
  * @author kviro
  */
-public class TaskCtrl {
+public class ReminderCtrl {
     
-    @FXML private Text actiontarget;
-    private static TaskCtrl taskCtrl;
     Stage stage;
+    @FXML private Text actiontarget;
+    private static ReminderCtrl reminderCtrl;
     
-    private TaskCtrl(Stage existingStage){
-        
+    private ReminderCtrl(Stage existingStage){
         stage = existingStage;
         try {
             //load new fxml
@@ -39,14 +37,12 @@ public class TaskCtrl {
         }
     }
     
-    public static TaskCtrl getTaskCtrl(Stage existingStage)
-    { 
-        if (taskCtrl == null) {
+     public static ReminderCtrl getReminderCtrl(Stage existingStage){ 
+        if (reminderCtrl == null) {
             
-            taskCtrl = new TaskCtrl(existingStage); 
+            reminderCtrl = new ReminderCtrl(existingStage); 
             
         }
-        return taskCtrl; 
+        return reminderCtrl; 
     } 
-    
 }

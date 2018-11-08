@@ -99,33 +99,29 @@ public class UserList {
         
     }
     
-    public boolean authenticate(String testUsername, char[] testPassword){
+    public User authenticate(String testUsername, char[] testPassword){
         
         boolean usernameValid = false;
-        boolean passwordValid = true;
-       
+        boolean passwordValid = false;
+        
         for(User u: userList){
+            String passwordToTest = new String(testPassword);
             
             if(testUsername.equals(u.getUsername())){
+                
                 System.out.println("Username found: " + u.getUsername());
                 usernameValid = true;
-                //System.out.println("Correct password: " + u.getPassword());
-                //System.out.println("User password: " + testPassword);
                 
-                for(int i = 0; i < testPassword.length; i++){
-                    if(testPassword[i] != u.getPassword()[i]){
-                        System.out.println("Incorrect Password");
-                        return false;
-                    }
-                } 
+                if(passwordToTest.equals(new String(u.getPassword()))){
+                    passwordValid = true;
+                    return u;
+                }
+               
             }
+            
         }
+        return null;
         
-        if(usernameValid == true && passwordValid == true){
-            return true;
-        } else {
-            return false;
-        }
     }
     
     

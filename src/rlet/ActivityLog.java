@@ -12,18 +12,20 @@ import java.util.ArrayList;
  */
 public class ActivityLog implements Serializable{
     
-    ArrayList<Task> TaskLog;
+    ArrayList<Task> taskLog;
     
     public ActivityLog(){
         
-        TaskLog = new ArrayList<Task>();
+        taskLog = new ArrayList<Task>();
         
     }
     
-    public void addItem(Task t){
+    public void addToLog(Task t){
         
-        //TaskLog.add(t);
+        taskLog.add(t);
         
     }
+    
+    
     
 }

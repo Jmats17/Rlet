@@ -18,18 +18,21 @@ import javafx.stage.Stage;
  *
  * @author kviro
  */
-public class TaskCtrl {
+public class TaskListCtrl {
     
     @FXML private Text actiontarget;
-    private static TaskCtrl taskCtrl;
+    private static TaskListCtrl taskListCtrl;
+    private TaskList taskList;
+    
     Stage stage;
     
-    private TaskCtrl(Stage existingStage){
+    private TaskListCtrl(Stage existingStage){
         
         stage = existingStage;
+        taskList = NavigationCtrl.getNavigationCtrl(stage).getCurrentUser().getTaskList();
         try {
             //load new fxml
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TaskUI.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TaskListUI.fxml"));
             Parent root = fxmlLoader.load();
             stage.setTitle("Task List");
             stage.setScene(new Scene(root));
@@ -39,14 +42,27 @@ public class TaskCtrl {
         }
     }
     
-    public static TaskCtrl getTaskCtrl(Stage existingStage)
+    public static TaskListCtrl getTaskListCtrl(Stage existingStage)
     { 
-        if (taskCtrl == null) {
+        if (taskListCtrl == null) {
             
-            taskCtrl = new TaskCtrl(existingStage); 
+            taskListCtrl = new TaskListCtrl(existingStage); 
             
         }
-        return taskCtrl; 
+        return taskListCtrl; 
     } 
+    
+    public void addNewTask(Task t){
+        
+        taskList.addTask(t);
+        PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
+        
+    }
+    
+    public void removeTask(Task t){
+        
+        taskList.removeTask(t);
+        
+    }
     
 }

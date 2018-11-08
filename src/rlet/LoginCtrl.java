@@ -42,12 +42,12 @@ public class LoginCtrl implements Initializable {
         String username = getUsername();
         char[] password = getPassword();
         
-        boolean authenticated = testList.authenticate(username, password);
+        User loggedInUser = testList.authenticate(username, password);
         
-        if(authenticated == true){
+        if(loggedInUser != null){
             Stage stage = (Stage)passwordField.getScene().getWindow();
             stage.hide(); //hide stage before passing control
-            NavigationCtrl theNavigationCtrl = NavigationCtrl.getNavigationCtrl(stage);
+            NavigationCtrl theNavigationCtrl = NavigationCtrl.getNavigationCtrl(stage, loggedInUser);
             
         }
         

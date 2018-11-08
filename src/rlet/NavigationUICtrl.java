@@ -31,7 +31,7 @@ public class NavigationUICtrl {
         actiontarget.setText("Task list button pressed");
         Stage theStage = (Stage) actiontarget.getScene().getWindow();
         theStage.hide();
-        NavigationCtrl.getNavigationCtrl(theStage).getTaskCtrl(theStage);
+        NavigationCtrl.getNavigationCtrl(theStage).getTaskListCtrl(theStage);
         
     }
     

@@ -22,9 +22,11 @@ public class ActivityLogCtrl {
     @FXML private Text actiontarget;
     
     private static ActivityLogCtrl theActivityLogCtrl;
+    private ActivityLog activityLog;
    
     private ActivityLogCtrl(Stage theExistingStage){
         
+        activityLog = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog();
         stage = theExistingStage;
         this.setUpActivityLogScene();
         stage.show();
@@ -52,6 +54,12 @@ public class ActivityLogCtrl {
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+    
+    public void addToLog(){
+        
+        
+        
     }
     
 }

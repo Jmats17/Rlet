@@ -22,22 +22,33 @@ public class NavigationCtrl {
     @FXML private Text actiontarget;
     
     private static NavigationCtrl theNavigationCtrl;
-    private String username;
+    private User user;
     
-    private NavigationCtrl(Stage theExistingStage){
+    private NavigationCtrl(Stage theExistingStage, User u){
         
+        user = u;
         stage = theExistingStage;
         this.setUpNavigationScene();
         stage.show();
     }
     
-    public static NavigationCtrl getNavigationCtrl(Stage theStage){
+    public static NavigationCtrl getNavigationCtrl(Stage theStage, User u){
         
         if(theNavigationCtrl != null){
             return theNavigationCtrl;
         }else{
-            theNavigationCtrl = new NavigationCtrl(theStage);
+            theNavigationCtrl = new NavigationCtrl(theStage, u);
             return theNavigationCtrl;
+        }
+    }
+    
+    
+    public static NavigationCtrl getNavigationCtrl(Stage theStage){
+        
+        if(theNavigationCtrl != null){
+            return theNavigationCtrl;
+        } else {
+            return null;
         }
     }
     
@@ -55,12 +66,24 @@ public class NavigationCtrl {
         }
     }
     
-    public void getTaskCtrl(Stage theStage){
-        TaskCtrl.getTaskCtrl(theStage);
+    public User getCurrentUser(){
+        return user;
     }
     
-    public void getActivityLogCtrl(Stage theStage){
-       ActivityLogCtrl.getActivityLogCtrl(theStage);
+    public TaskCtrl getTaskCtrl(Stage theStage){
+        return TaskCtrl.getTaskCtrl(theStage);
+    }
+    
+    public ActivityLogCtrl getActivityLogCtrl(Stage theStage){
+       return ActivityLogCtrl.getActivityLogCtrl(theStage);
+    }
+    
+    public TaskListCtrl getTaskListCtrl(Stage theStage){
+        return TaskListCtrl.getTaskListCtrl(theStage);
+    }
+    
+    public ReminderCtrl getReminderCtrl(Stage theStage){
+        return ReminderCtrl.getReminderCtrl(theStage);
     }
    
     public void exit(){
