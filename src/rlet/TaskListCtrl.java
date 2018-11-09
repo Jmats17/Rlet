@@ -55,7 +55,7 @@ public class TaskListCtrl {
     public void addNewTask(Task t){
         
         taskList.addTask(t);
-        PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
+        NavigationCtrl.getNavigationCtrl(stage).getPersistentDataCtrl().writeSerializedDataModel();
         
     }
     
