@@ -27,9 +27,9 @@ public class ReminderCtrl {
         stage = existingStage;
         try {
             //load new fxml
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TaskUI.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewReminderUI.fxml"));
             Parent root = fxmlLoader.load();
-            stage.setTitle("Task List");
+            stage.setTitle("Create Reminder");
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {

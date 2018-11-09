@@ -46,12 +46,12 @@ public class TaskUICtrl {
         
     }
     
-    @FXML protected void handleAddReminderButtonAction(ActionEvent event){
+    @FXML protected void handleViewRemindersButtonAction(ActionEvent event){
         
         actiontarget.setText("Mark as done button pressed");
         Stage theStage = (Stage) actiontarget.getScene().getWindow();
         theStage.hide();
-        NavigationCtrl.getNavigationCtrl(theStage).getReminderCtrl(theStage);
+        NavigationCtrl.getNavigationCtrl(theStage).getReminderListCtrl(theStage);
        
         
     }
