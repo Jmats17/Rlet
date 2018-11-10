@@ -48,4 +48,10 @@ public class ReminderList implements Serializable{
         reminderList.add(new Reminder(dateString));
         
     }
+    
+    public ArrayList<Reminder> getList(){
+        
+        return reminderList;
+        
+    }
 }

@@ -6,6 +6,8 @@
 package rlet;
 
 import java.io.IOException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,6 +21,7 @@ public class ReminderListCtrl {
     Stage stage;
     private static ReminderListCtrl reminderListCtrl;
     private ReminderList reminderList;
+    private ObservableList<Reminder> observableReminderList;
     
     private ReminderListCtrl(Stage existingStage){
         
@@ -56,6 +59,13 @@ public class ReminderListCtrl {
     public void deleteReminder(){
         
         
+        
+    }
+    
+    public ObservableList<Reminder> getReminderList(){
+        
+        ObservableList<Reminder> observableTaskList = FXCollections.observableArrayList(reminderList.getList());
+        return observableReminderList;
         
     }
 }

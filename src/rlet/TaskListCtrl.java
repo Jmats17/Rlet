@@ -6,7 +6,8 @@
 package rlet;
 
 import java.io.IOException;
-import javafx.event.ActionEvent;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,7 +21,7 @@ import javafx.stage.Stage;
  */
 public class TaskListCtrl {
     
-    @FXML private Text actiontarget;
+    
     private static TaskListCtrl taskListCtrl;
     private TaskList taskList;
     
@@ -62,6 +63,13 @@ public class TaskListCtrl {
     public void removeTask(Task t){
         
         taskList.removeTask(t);
+        
+    }
+    
+    public ObservableList<Task> getTaskList(){
+        
+        ObservableList<Task> observableTaskList = FXCollections.observableArrayList(taskList.getList());
+        return observableTaskList;
         
     }
     

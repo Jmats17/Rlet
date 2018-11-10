@@ -70,7 +70,7 @@ public class UserList {
     
     public void createTestUserList(){
         for (int i = 0; i < 4; i++){
-            String testUsername = "TestUsername" + i;
+            String testUsername = "Test" + i;
             char[] testPassword = {'T', 'e', 's', 't'};
             userList.add(new Roommate(testUsername, testPassword));
         }

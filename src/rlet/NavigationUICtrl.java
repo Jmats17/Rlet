@@ -7,6 +7,7 @@ package rlet;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -19,7 +20,7 @@ public class NavigationUICtrl {
     
     @FXML private Text actiontarget;
     private static NavigationCtrl theNavigationUICtrl;
-    
+    @FXML private Label username;
     public NavigationUICtrl(){
         
         
@@ -28,8 +29,8 @@ public class NavigationUICtrl {
     
     @FXML protected void handleManageTasksButtonAction(ActionEvent event){
         
-        actiontarget.setText("Task list button pressed");
-        Stage theStage = (Stage) actiontarget.getScene().getWindow();
+        //actiontarget.setText("Task list button pressed");
+        Stage theStage = (Stage)username.getScene().getWindow();
         theStage.hide();
         NavigationCtrl.getNavigationCtrl(theStage).getTaskListCtrl(theStage);
         

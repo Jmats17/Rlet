@@ -31,18 +31,7 @@ public class TaskUICtrl {
         Stage theStage = (Stage) actiontarget.getScene().getWindow();
         theStage.hide();
         NavigationCtrl.getNavigationCtrl(theStage).getActivityLogCtrl(theStage).addToLog();
-        /*
-        - When the user clicks a task in taskListUI, they are taken to the task view for that one task (this UI)
-        - this UI has a mark as done button
-        - mark as done removes the task from the users tasklist and adds it to the activity log
         
-        questions:: 
-        - when displaying task list, how to make tasks (displayed as their name) clickable?
-        - how to differentiate one task from another when one is clicked?
-        
-       
-        
-        */
         
     }
     
@@ -52,7 +41,6 @@ public class TaskUICtrl {
         Stage theStage = (Stage) actiontarget.getScene().getWindow();
         theStage.hide();
         NavigationCtrl.getNavigationCtrl(theStage).getReminderListCtrl(theStage);
-       
         
     }
 }
