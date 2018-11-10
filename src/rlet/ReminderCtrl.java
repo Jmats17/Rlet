@@ -26,7 +26,7 @@ public class ReminderCtrl {
     private ReminderCtrl(Stage existingStage){
         stage = existingStage;
         try {
-            //load new fxml
+           
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewReminderUI.fxml"));
             Parent root = fxmlLoader.load();
             stage.setTitle("Create Reminder");
@@ -45,4 +45,6 @@ public class ReminderCtrl {
         }
         return reminderCtrl; 
     } 
+     
+    
 }

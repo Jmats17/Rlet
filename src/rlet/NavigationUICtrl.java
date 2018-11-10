@@ -7,6 +7,7 @@ package rlet;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -21,6 +22,7 @@ public class NavigationUICtrl {
     @FXML private Text actiontarget;
     private static NavigationCtrl theNavigationUICtrl;
     @FXML private Label username;
+    @FXML private Button activityLogButton;
     public NavigationUICtrl(){
         
         

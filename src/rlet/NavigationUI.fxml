@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.NavigationUICtrl">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.NavigationUICtrl">
    <children>
       <AnchorPane layoutX="40.0" layoutY="34.0" prefHeight="333.0" prefWidth="520.0">
          <children>
@@ -16,7 +16,7 @@
                <font>
                   <Font size="12.0" />
                </font></Button>
-            <Button onAction="#handleManageTasksButtonAction" alignment="BOTTOM_CENTER" layoutX="189.0" layoutY="95.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="143.0" text="View Task List">
+            <Button alignment="BOTTOM_CENTER" layoutX="189.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleManageTasksButtonAction" prefHeight="105.0" prefWidth="143.0" text="View Task List">
                <font>
                   <Font size="12.0" />
                </font></Button>
@@ -68,6 +68,11 @@
                   <Font size="16.0" />
                </font>
             </Label>
+            <Button fx:id="activityLogButton" alignment="BOTTOM_CENTER" layoutX="363.0" layoutY="218.0" mnemonicParsing="false" onAction="#handleActivityLogButtonAction" prefHeight="105.0" prefWidth="143.0" text="Activity Log">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

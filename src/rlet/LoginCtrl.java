@@ -28,6 +28,7 @@ public class LoginCtrl implements Initializable {
     @FXML private PasswordField passwordField = new PasswordField();
     
     private UserList testList = new UserList();
+    private static User loggedInUser;
     
     public LoginCtrl(){
         
@@ -42,7 +43,7 @@ public class LoginCtrl implements Initializable {
         String username = getUsername();
         char[] password = getPassword();
         
-        User loggedInUser = testList.authenticate(username, password);
+        loggedInUser = testList.authenticate(username, password);
         
         if(loggedInUser != null){
             Stage stage = (Stage)passwordField.getScene().getWindow();
@@ -66,7 +67,11 @@ public class LoginCtrl implements Initializable {
         
     }
     
-    
+    public static User getLoggedInUser(){
+        
+        return loggedInUser;
+        
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

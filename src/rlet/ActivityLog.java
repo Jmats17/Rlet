@@ -26,6 +26,10 @@ public class ActivityLog implements Serializable{
         
     }
     
+    public ArrayList<Task> getLog(){
+        return taskLog;
+    }
+    
     
     
 }

@@ -12,11 +12,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -28,6 +27,7 @@ public class ReminderListUICtrl implements Initializable{
     @FXML private TableView reminderListTable;
    
     @FXML private TableColumn reminderDate;
+    @FXML private Button newReminder;
     private ObservableList<Reminder> reminderList;
     private Stage theStage;
     
@@ -43,10 +43,8 @@ public class ReminderListUICtrl implements Initializable{
         reminderListTable.setItems(reminderList);
     }
     
-    @FXML protected void handleAddReminderButtonAction(ActionEvent event){
+    @FXML protected void handleNewReminderButtonAction(ActionEvent event){
         
-       
-        //Stage theStage = (Stage) actiontarget.getScene().getWindow();
         theStage.hide();
         NavigationCtrl.getNavigationCtrl(theStage).getReminderListCtrl(theStage).addNewReminder(reminderDate.getText());
         
@@ -57,7 +55,8 @@ public class ReminderListUICtrl implements Initializable{
         //actiontarget.setText("Delete Reminder button pressed");
         //Stage theStage = (Stage) actiontarget.getScene().getWindow();
         theStage.hide();
-        NavigationCtrl.getNavigationCtrl(theStage).getReminderListCtrl(theStage).deleteReminder();
+        //need to find which reminder was clicked
+        //NavigationCtrl.getNavigationCtrl(theStage).getReminderListCtrl(theStage).deleteReminder();
         
     }
 }

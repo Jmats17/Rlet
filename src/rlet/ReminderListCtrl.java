@@ -56,9 +56,9 @@ public class ReminderListCtrl {
         
     }
     
-    public void deleteReminder(){
+    public void deleteReminder(Reminder r){
         
-        
+        reminderList.removeReminder(r);
         
     }
     

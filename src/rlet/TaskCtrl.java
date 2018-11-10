@@ -49,4 +49,18 @@ public class TaskCtrl {
         return taskCtrl; 
     } 
     
+    public void reqNewTask(){
+ 
+        try {
+            //load new fxml
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewTaskUI.fxml"));
+            Parent root = fxmlLoader.load();
+            stage.setTitle("New Task");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
 }

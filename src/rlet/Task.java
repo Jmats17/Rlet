@@ -18,13 +18,14 @@ public class Task implements Serializable{
     private String taskName;
    
     private Date dueDate;
-    private boolean completed = false;
+    private Boolean completed = false;
     private SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     protected ReminderList reminderList; 
+    private String assignedUser;
     
-    public Task(String n, String dateString){
+    public Task(String n, String dateString, String username){
         taskName = n;
-        
+        assignedUser = username;
         try {
            dueDate = format.parse(dateString); 
            System.out.println(dueDate); 
@@ -46,7 +47,7 @@ public class Task implements Serializable{
    
     }
     
-    public boolean getStatus(){
+    public Boolean getStatus(){
         
         return completed;
         
@@ -61,6 +62,12 @@ public class Task implements Serializable{
     public ReminderList getReminderList(){
         
         return reminderList;
+        
+    }
+    
+    public String getAssignedUser(){
+        
+        return assignedUser;
         
     }
     
