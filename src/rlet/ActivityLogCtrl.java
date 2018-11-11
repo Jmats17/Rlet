@@ -23,7 +23,7 @@ public class ActivityLogCtrl {
     
     private static ActivityLogCtrl theActivityLogCtrl;
     private ActivityLog activityLog;
-   
+   //
     private ActivityLogCtrl(Stage theExistingStage){
         
         activityLog = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog();
