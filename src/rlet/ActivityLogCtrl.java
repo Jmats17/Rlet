@@ -22,11 +22,11 @@ public class ActivityLogCtrl {
     @FXML private Text actiontarget;
     
     private static ActivityLogCtrl theActivityLogCtrl;
-    private ActivityLog activityLog;
+    //private ActivityLog activityLog;
    
     private ActivityLogCtrl(Stage theExistingStage){
         
-        activityLog = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog();
+        //activityLog = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog();
         stage = theExistingStage;
         this.setUpActivityLogScene();
         stage.show();
@@ -58,7 +58,7 @@ public class ActivityLogCtrl {
     
     public void addToLog(Task t){
         
-        activityLog.addItem(t);
+        //activityLog.addItem(t);
         
     }
     

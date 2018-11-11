@@ -20,7 +20,7 @@ public class Reminder implements Serializable{
            
     public Reminder(String dateString){
         
-        SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
       
         try {
            date = format.parse(dateString); 

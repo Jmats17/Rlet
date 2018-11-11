@@ -27,7 +27,7 @@ public class ReminderList implements Serializable{
     public void createTestReminderList(){
         for (int i = 0; i < 1; i++){
        
-            String testDueDate = "2018/11/05 09:00:00";
+            String testDueDate = "05/11/2018 09:00:00";
             addReminder(testDueDate);
         }
         System.out.println("Test Reminder created");

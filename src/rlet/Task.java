@@ -53,7 +53,7 @@ public class Task implements Serializable{
         
     }
     
-    public void MarkAsDone(){
+    public void markAsDone(){
         
         completed = true;
         

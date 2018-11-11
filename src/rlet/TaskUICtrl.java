@@ -40,14 +40,12 @@ public class TaskUICtrl implements Initializable{
     @FXML private TableColumn<Reminder, Date> reminderDate;
     @FXML private Button newReminder;
     private ObservableList<Reminder> reminderList;
-   // private Stage theStage;
+   
  
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
-        //Scene scene = markAsDone.getScene();
-       // theStage = (Stage)scene.getWindow();
-        //selectedTask = TaskCtrl.getTaskCtrl(null).getSelectedTask();
+        
        
     }
     
@@ -55,7 +53,9 @@ public class TaskUICtrl implements Initializable{
         
         Stage theStage = (Stage) markAsDone.getScene().getWindow();
         theStage.hide();
-        NavigationCtrl.getNavigationCtrl(theStage).getActivityLogCtrl(theStage).addToLog(selectedTask);
+        selectedTask.markAsDone();
+        TaskListCtrl.getTaskListCtrl(theStage).removeTask(selectedTask);
+        ActivityLogCtrl.getActivityLogCtrl(theStage);//.addToLog(selectedTask);
         
     }
     
@@ -63,7 +63,7 @@ public class TaskUICtrl implements Initializable{
         
         Stage theStage = (Stage) markAsDone.getScene().getWindow();
         theStage.hide();
-        NavigationCtrl.getNavigationCtrl(theStage).getReminderListCtrl(theStage);
+        NavigationCtrl.getNavigationCtrl(theStage).getReminderCtrl(theStage);
         
     }
 
@@ -75,6 +75,8 @@ public class TaskUICtrl implements Initializable{
         
         reminderList = FXCollections.observableArrayList(selectedTask.getReminderList().getList());
         reminderDate.setCellValueFactory(new PropertyValueFactory<Reminder, Date>("date")); 
+        reminderListTable.setItems(reminderList);
+        
     }
     
     

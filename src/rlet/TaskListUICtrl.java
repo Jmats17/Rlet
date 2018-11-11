@@ -73,7 +73,7 @@ public class TaskListUICtrl implements Initializable{
         
     }
     
-     @FXML protected void handleViewTaskButtonAction(){
+    @FXML protected void handleViewTaskButtonAction(){
         
         //actiontarget.setText("View Task button pressed");
         
