@@ -40,8 +40,11 @@ public class TaskUICtrl implements Initializable{
     @FXML private TableColumn<Reminder, Date> reminderDate;
     @FXML private Button newReminder;
     private ObservableList<Reminder> reminderList;
-   
+    
+    Stage taskStage;
+    Scene taskScene;
  
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
@@ -55,7 +58,11 @@ public class TaskUICtrl implements Initializable{
         theStage.hide();
         selectedTask.markAsDone();
         TaskListCtrl.getTaskListCtrl(theStage).removeTask(selectedTask);
-        ActivityLogCtrl.getActivityLogCtrl(theStage);//.addToLog(selectedTask);
+        //need to go back to the tasklist to show the task is gone
+        //need to add the task to activity log
+        //need to update Persistent Data
+        
+        //ActivityLogCtrl.getActivityLogCtrl(theStage);//.addToLog(selectedTask);
         
     }
     
@@ -63,7 +70,7 @@ public class TaskUICtrl implements Initializable{
         
         Stage theStage = (Stage) markAsDone.getScene().getWindow();
         theStage.hide();
-        ReminderCtrl.getReminderCtrl(theStage);
+        ReminderCtrl.getReminderCtrl(theStage, selectedTask);
         
     }
 
@@ -78,6 +85,8 @@ public class TaskUICtrl implements Initializable{
         reminderListTable.setItems(reminderList);
         
     }
+    
+    
     
     
 }

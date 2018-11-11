@@ -18,18 +18,21 @@ public class ReminderListCtrl {
     private static ReminderListCtrl reminderListCtrl;
     private ReminderList reminderList;
     private ObservableList<Reminder> observableReminderList;
+    private Task selectedTask;
     
-    private ReminderListCtrl(Stage existingStage){
+    private ReminderListCtrl(Stage existingStage, Task t){
         
-        
+        selectedTask = t;
+        reminderList = t.getReminderList();
         
     }
     
-    public static ReminderListCtrl getReminderListCtrl(Stage existingStage)
+    public static ReminderListCtrl getReminderListCtrl(Stage existingStage, Task existingTask)
     { 
+        
         if (reminderListCtrl == null) {
             
-            reminderListCtrl = new ReminderListCtrl(existingStage); 
+            reminderListCtrl = new ReminderListCtrl(existingStage, existingTask); 
             
         }
         return reminderListCtrl; 
@@ -37,8 +40,9 @@ public class ReminderListCtrl {
     
     public void addNewReminder(String dateString){
         
-        reminderList.addReminder(dateString);
-        //NavigationCtrl.getNavigationCtrl(stage).getPersistentDataCtrl().writeSerializedDataModel();
+       reminderList.addReminder(dateString);
+       //update PersistentDataCollection
+       //PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
         
     }
     

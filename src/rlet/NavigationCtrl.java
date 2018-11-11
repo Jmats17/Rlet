@@ -82,13 +82,8 @@ public class NavigationCtrl {
         return TaskListCtrl.getTaskListCtrl(theStage);
     }
     
-    public ReminderCtrl getReminderCtrl(Stage theStage){
-        return ReminderCtrl.getReminderCtrl(theStage);
-    }
+   
     
-    public ReminderListCtrl getReminderListCtrl(Stage theStage){
-        return ReminderListCtrl.getReminderListCtrl(theStage);
-    }
     
     public PersistentDataCtrl getPersistentDataCtrl(){
         return PersistentDataCtrl.getPersistentDataCtrl();

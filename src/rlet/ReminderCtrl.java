@@ -25,9 +25,9 @@ public class ReminderCtrl {
     Stage stage;
    
     private static ReminderCtrl reminderCtrl;
-   
+    private Task selectedTask;
     
-    private ReminderCtrl(Stage existingStage){
+    private ReminderCtrl(Stage existingStage, Task t){
         stage = existingStage;
         try {
            
@@ -36,18 +36,19 @@ public class ReminderCtrl {
             stage.setTitle("Create Reminder");
             stage.setScene(new Scene(root));
             stage.show();
+            
+            selectedTask = t;
+            ReminderUICtrl controller = (ReminderUICtrl)fxmlLoader.getController();
+            controller.setTask(selectedTask); 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
-        ReminderUICtrl controller = (ReminderUICtrl)fxmlLoader.getController();
-        controller.setTask(selectedTask); 
     }
     
-    public static ReminderCtrl getReminderCtrl(Stage existingStage){ 
+    public static ReminderCtrl getReminderCtrl(Stage existingStage, Task t){ 
         if (reminderCtrl == null) {
             
-            reminderCtrl = new ReminderCtrl(existingStage); 
+            reminderCtrl = new ReminderCtrl(existingStage, t); 
             
         }
         return reminderCtrl; 

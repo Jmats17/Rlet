@@ -25,6 +25,7 @@ public class ReminderUICtrl implements Initializable{
     @FXML private Button createReminderButton;
     private Stage stage;
     private Task selectedTask;
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
        
@@ -35,7 +36,14 @@ public class ReminderUICtrl implements Initializable{
         String dateString = dateField.getText();
         String timeString = timeField.getText();
         String fullDateString = dateString + " " + timeString;
-        ReminderListCtrl.getReminderListCtrl(stage).addNewReminder(fullDateString);
+        System.out.println("before change");
+        selectedTask.getReminderList().printReminderList();
+        
+        ReminderListCtrl.getReminderListCtrl(stage, selectedTask).addNewReminder(fullDateString);
+        System.out.println("After change");
+        selectedTask.getReminderList().printReminderList();
+        Stage stage = (Stage) createReminderButton.getScene().getWindow();
+        TaskCtrl.getTaskCtrl(stage, selectedTask).showUI();
         
     }
     

@@ -24,7 +24,7 @@ public class TaskCtrl {
     private static TaskCtrl taskCtrl;
     private Task selectedTask;
     Stage stage;
-    
+   
     private TaskCtrl(Stage existingStage, Task existingTask){
         selectedTask = existingTask;
         stage = existingStage;
@@ -32,8 +32,9 @@ public class TaskCtrl {
             //load new fxml
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TaskUI.fxml"));
             Parent root = fxmlLoader.load();
-            stage.setTitle("Task List");
+            stage.setTitle("Task Details");
             stage.setScene(new Scene(root));
+            
             stage.show();
             
             TaskUICtrl controller = (TaskUICtrl)fxmlLoader.getController();
@@ -67,11 +68,23 @@ public class TaskCtrl {
         }
     }
     
-        
-    public Task getSelectedTask(){
-        
-        return selectedTask;
-        
+    public void showUI(){
+        try {
+            //load new fxml
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TaskUI.fxml"));
+            Parent root = fxmlLoader.load();
+            stage.setTitle("Task Details");
+            stage.setScene(new Scene(root));
+            
+            stage.show();
+            
+            TaskUICtrl controller = (TaskUICtrl)fxmlLoader.getController();
+            controller.setTask(selectedTask); 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+    
+   
     
 }
