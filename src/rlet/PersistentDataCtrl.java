@@ -19,7 +19,7 @@ public class PersistentDataCtrl {
     private static PersistentDataCtrl thePersistentDataCtrl;
     private PersistentDataCollection thePersistentDataCollection;
     private final String EXTERNAL_DATA_PATH = "";
-    private final String DATA_FILE_NAME = "AppData.ser";
+    private final String DATA_FILE_NAME = "dataList.ser";
     
     private PersistentDataCtrl(){
         readSerializedDataModel(); 
@@ -51,12 +51,10 @@ public class PersistentDataCtrl {
             thePersistentDataCollection = (PersistentDataCollection) in.readObject();
             in.close();
         }
-        catch(IOException ex){
-            ex.printStackTrace();
+        catch(Exception e){
+            e.printStackTrace();
         }
-        catch(ClassNotFoundException ex){
-            ex.printStackTrace();
-        }
+       
     }
 
     

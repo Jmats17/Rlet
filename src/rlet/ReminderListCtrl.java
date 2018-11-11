@@ -52,7 +52,7 @@ public class ReminderListCtrl {
     public void addNewReminder(String dateString){
         
         reminderList.addReminder(dateString);
-        NavigationCtrl.getNavigationCtrl(stage).getPersistentDataCtrl().writeSerializedDataModel();
+        //NavigationCtrl.getNavigationCtrl(stage).getPersistentDataCtrl().writeSerializedDataModel();
         
     }
     

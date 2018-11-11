@@ -56,9 +56,9 @@ public class ActivityLogCtrl {
         }
     }
     
-    public void addToLog(){
+    public void addToLog(Task t){
         
-        
+        activityLog.addItem(t);
         
     }
     

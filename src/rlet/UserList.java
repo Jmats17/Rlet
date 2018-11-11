@@ -21,7 +21,7 @@ public class UserList {
     
     public UserList(){
         
-        this.readDataListFile();
+        //this.readDataListFile();
       
         if(userList.isEmpty() || userList == null){
             

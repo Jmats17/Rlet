@@ -22,10 +22,11 @@ public class TaskCtrl {
     
     @FXML private Text actiontarget;
     private static TaskCtrl taskCtrl;
+    private Task selectedTask;
     Stage stage;
     
-    private TaskCtrl(Stage existingStage){
-        
+    private TaskCtrl(Stage existingStage, Task existingTask){
+        selectedTask = existingTask;
         stage = existingStage;
         try {
             //load new fxml
@@ -34,16 +35,19 @@ public class TaskCtrl {
             stage.setTitle("Task List");
             stage.setScene(new Scene(root));
             stage.show();
+            
+            TaskUICtrl controller = (TaskUICtrl)fxmlLoader.getController();
+            controller.setTask(selectedTask); 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     
-    public static TaskCtrl getTaskCtrl(Stage existingStage)
+    public static TaskCtrl getTaskCtrl(Stage existingStage, Task existingTask)
     { 
         if (taskCtrl == null) {
             
-            taskCtrl = new TaskCtrl(existingStage); 
+            taskCtrl = new TaskCtrl(existingStage, existingTask); 
             
         }
         return taskCtrl; 
@@ -61,6 +65,13 @@ public class TaskCtrl {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+        
+    public Task getSelectedTask(){
+        
+        return selectedTask;
+        
     }
     
 }

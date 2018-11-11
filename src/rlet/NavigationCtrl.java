@@ -71,7 +71,7 @@ public class NavigationCtrl {
     }
     
     public TaskCtrl getTaskCtrl(Stage theStage){
-        return TaskCtrl.getTaskCtrl(theStage);
+        return TaskCtrl.getTaskCtrl(theStage, null);
     }
     
     public ActivityLogCtrl getActivityLogCtrl(Stage theStage){

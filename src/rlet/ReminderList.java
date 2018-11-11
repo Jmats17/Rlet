@@ -46,7 +46,7 @@ public class ReminderList implements Serializable{
     public void addReminder(String dateString){
         
         reminderList.add(new Reminder(dateString));
-        PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
+        //PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
         
     }
     

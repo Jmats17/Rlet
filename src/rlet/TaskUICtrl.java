@@ -5,42 +5,77 @@
  */
 package rlet;
 
+import java.net.URL;
+import java.util.Date;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.text.Text;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 /**
  *
  * @author kviro
  */
-public class TaskUICtrl {
-    
-    @FXML private Text actiontarget;
+public class TaskUICtrl implements Initializable{
+
+    @FXML private GridPane taskDetailTable;
+    @FXML private Label taskNameValue;
+    @FXML private Label taskDueDateValue;
+    @FXML private Label taskStatusValue;
+    @FXML private Button markAsDone;
     private static TaskUICtrl TaskUICtrl;
+    private Task selectedTask;
     
-    public TaskUICtrl(){
+    @FXML private TableView<Reminder> reminderListTable;
+    @FXML private TableColumn<Reminder, Date> reminderDate;
+    @FXML private Button newReminder;
+    private ObservableList<Reminder> reminderList;
+   // private Stage theStage;
+ 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         
-      
-        
+        //Scene scene = markAsDone.getScene();
+       // theStage = (Stage)scene.getWindow();
+        //selectedTask = TaskCtrl.getTaskCtrl(null).getSelectedTask();
+       
     }
     
     @FXML protected void handleMarkAsDoneButtonAction(ActionEvent event){
         
-        actiontarget.setText("Mark as done button pressed");
-        Stage theStage = (Stage) actiontarget.getScene().getWindow();
+        Stage theStage = (Stage) markAsDone.getScene().getWindow();
         theStage.hide();
-        NavigationCtrl.getNavigationCtrl(theStage).getActivityLogCtrl(theStage).addToLog();
-        
+        NavigationCtrl.getNavigationCtrl(theStage).getActivityLogCtrl(theStage).addToLog(selectedTask);
         
     }
     
-    @FXML protected void handleViewRemindersButtonAction(ActionEvent event){
+    @FXML protected void handleAddReminderButtonAction(ActionEvent event){
         
-        actiontarget.setText("Mark as done button pressed");
-        Stage theStage = (Stage) actiontarget.getScene().getWindow();
+        Stage theStage = (Stage) markAsDone.getScene().getWindow();
         theStage.hide();
         NavigationCtrl.getNavigationCtrl(theStage).getReminderListCtrl(theStage);
         
     }
+
+    public void setTask(Task t) {
+        this.selectedTask = t;
+        taskNameValue.setText(selectedTask.getName());
+        taskDueDateValue.setText(selectedTask.getDueDate().toString());
+        taskStatusValue.setText(selectedTask.getStatus().toString());
+        
+        reminderList = FXCollections.observableArrayList(selectedTask.getReminderList().getList());
+        reminderDate.setCellValueFactory(new PropertyValueFactory<Reminder, Date>("date")); 
+    }
+    
+    
 }
