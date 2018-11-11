@@ -5,12 +5,8 @@
  */
 package rlet;
 
-import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -25,18 +21,8 @@ public class ReminderListCtrl {
     
     private ReminderListCtrl(Stage existingStage){
         
-        stage = existingStage;
         
-        try {
-            //load new fxml
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ReminderListUI.fxml"));
-            Parent root = fxmlLoader.load();
-            stage.setTitle("Reminder List");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        
     }
     
     public static ReminderListCtrl getReminderListCtrl(Stage existingStage)

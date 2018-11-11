@@ -17,7 +17,7 @@ public class ReminderList implements Serializable{
     
     private ArrayList<Reminder> reminderList = new ArrayList<Reminder>();
     
-    public ReminderList(Date d){
+    public ReminderList(){
         
         this.createTestReminderList();
            

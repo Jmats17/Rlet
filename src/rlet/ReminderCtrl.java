@@ -6,10 +6,13 @@
 package rlet;
 
 import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -20,8 +23,9 @@ import javafx.stage.Stage;
 public class ReminderCtrl {
     
     Stage stage;
-    @FXML private Text actiontarget;
+   
     private static ReminderCtrl reminderCtrl;
+   
     
     private ReminderCtrl(Stage existingStage){
         stage = existingStage;
@@ -35,9 +39,12 @@ public class ReminderCtrl {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
+        ReminderUICtrl controller = (ReminderUICtrl)fxmlLoader.getController();
+        controller.setTask(selectedTask); 
     }
     
-     public static ReminderCtrl getReminderCtrl(Stage existingStage){ 
+    public static ReminderCtrl getReminderCtrl(Stage existingStage){ 
         if (reminderCtrl == null) {
             
             reminderCtrl = new ReminderCtrl(existingStage); 
@@ -45,6 +52,7 @@ public class ReminderCtrl {
         }
         return reminderCtrl; 
     } 
+   
      
     
 }

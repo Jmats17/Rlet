@@ -32,7 +32,7 @@ public class Task implements Serializable{
         } catch (ParseException e) { 
            System.out.println("Unparseable using " + format); 
         }
-        reminderList = new ReminderList(dueDate);
+        reminderList = new ReminderList();
     }
     
     public String getName(){
