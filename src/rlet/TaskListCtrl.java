@@ -73,4 +73,20 @@ public class TaskListCtrl {
         
     }
     
+    public void showUI(){
+        try {
+            //load new fxml
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TaskListUI.fxml"));
+            Parent root = fxmlLoader.load();
+            stage.setTitle("Task List");
+            stage.setScene(new Scene(root));
+            
+            stage.show();
+            
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
 }

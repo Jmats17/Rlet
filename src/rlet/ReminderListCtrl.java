@@ -40,9 +40,10 @@ public class ReminderListCtrl {
     
     public void addNewReminder(String dateString){
         
-       reminderList.addReminder(dateString);
-       //update PersistentDataCollection
-       //PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
+        reminderList.addReminder(dateString);
+        
+        //PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
+        //something in persistentdatactrl or collection causes classcast exception
         
     }
     

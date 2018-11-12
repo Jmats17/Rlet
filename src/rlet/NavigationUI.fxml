@@ -8,38 +8,38 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.NavigationUICtrl">
+<AnchorPane id="AnchorPane" prefHeight="460.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.NavigationUICtrl">
    <children>
-      <AnchorPane layoutX="40.0" layoutY="34.0" prefHeight="333.0" prefWidth="520.0">
+      <AnchorPane layoutX="13.0" layoutY="11.0" prefHeight="439.0" prefWidth="525.0">
          <children>
-            <Button alignment="BOTTOM_CENTER" layoutX="363.0" layoutY="95.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="143.0" text="Maintenance Request">
+            <Button alignment="BOTTOM_CENTER" layoutX="33.0" layoutY="224.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="143.0" text="Maintenance Request">
                <font>
                   <Font size="12.0" />
                </font></Button>
-            <Button alignment="BOTTOM_CENTER" layoutX="189.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleManageTasksButtonAction" prefHeight="105.0" prefWidth="143.0" text="View Task List">
+            <Button alignment="BOTTOM_CENTER" layoutX="213.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleManageTasksButtonAction" prefHeight="105.0" prefWidth="143.0" text="View Task List">
                <font>
                   <Font size="12.0" />
                </font></Button>
-            <Button alignment="BOTTOM_CENTER" layoutX="14.0" layoutY="95.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="143.0" text="Task Calendar">
+            <Button alignment="BOTTOM_CENTER" layoutX="33.0" layoutY="101.0" mnemonicParsing="false" prefHeight="105.0" prefWidth="143.0" text="Task Calendar">
                <font>
                   <Font size="12.0" />
                </font></Button>
-            <ImageView fitHeight="61.0" fitWidth="69.0" layoutX="235.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="69.0" layoutX="259.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Downloads/noun_tasks_699088_000000.png" />
+                  <Image url="@../tasks.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="69.0" layoutX="56.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="69.0" layoutX="75.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Downloads/noun_Calendar_1474877_000000.png" />
+                  <Image url="@../calendar.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="69.0" layoutX="404.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="69.0" layoutX="74.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Downloads/noun_maintenance_1075989_000000.png" />
+                  <Image url="@../maintenance.png" />
                </image>
             </ImageView>
-            <Label layoutX="14.0" layoutY="41.0" text="Welcome,">
+            <Label layoutX="33.0" layoutY="56.0" text="Welcome,">
                <font>
                   <Font size="24.0" />
                </font>
@@ -49,30 +49,35 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="232.0" text="Roommates">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Circle fill="#d8d8d8" layoutX="32.0" layoutY="288.0" radius="18.0" stroke="#979797" strokeType="INSIDE" />
-            <Circle fill="#d8d8d8" layoutX="86.0" layoutY="288.0" radius="18.0" stroke="#979797" strokeType="INSIDE" />
-            <Circle fill="#d8d8d8" layoutX="145.0" layoutY="288.0" radius="18.0" stroke="#979797" strokeType="INSIDE" />
-            <Circle fill="#d8d8d8" layoutX="207.0" layoutY="288.0" radius="18.0" stroke="#979797" strokeType="INSIDE" />
-            <ImageView fitHeight="29.0" fitWidth="36.0" layoutX="477.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="29.0" fitWidth="36.0" layoutX="482.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Downloads/noun_person_373673_000000.png" />
+                  <Image url="@../person.png" />
                </image>
             </ImageView>
-            <Label layoutX="351.0" layoutY="19.0" text="Justin Matsnev" textFill="#6e6e6e">
+            <Label layoutX="356.0" layoutY="19.0" text="Justin Matsnev" textFill="#6e6e6e">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button fx:id="activityLogButton" alignment="BOTTOM_CENTER" layoutX="363.0" layoutY="218.0" mnemonicParsing="false" onAction="#handleActivityLogButtonAction" prefHeight="105.0" prefWidth="143.0" text="Activity Log">
+            <Button fx:id="activityLogButton" alignment="BOTTOM_CENTER" layoutX="214.0" layoutY="224.0" mnemonicParsing="false" onAction="#handleActivityLogButtonAction" prefHeight="105.0" prefWidth="143.0" text="Activity Log">
                <font>
                   <Font size="12.0" />
                </font>
             </Button>
+            <Label layoutX="40.0" layoutY="351.0" text="Roommates">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Circle fill="#d8d8d8" layoutX="58.0" layoutY="407.0" radius="18.0" stroke="#979797" strokeType="INSIDE" />
+            <Circle fill="#d8d8d8" layoutX="112.0" layoutY="407.0" radius="18.0" stroke="#979797" strokeType="INSIDE" />
+            <Circle fill="#d8d8d8" layoutX="171.0" layoutY="407.0" radius="18.0" stroke="#979797" strokeType="INSIDE" />
+            <Circle fill="#d8d8d8" layoutX="233.0" layoutY="407.0" radius="18.0" stroke="#979797" strokeType="INSIDE" />
+            <ImageView fitHeight="61.0" fitWidth="69.0" layoutX="254.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../activity.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

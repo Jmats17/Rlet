@@ -42,8 +42,10 @@ public class ReminderUICtrl implements Initializable{
         ReminderListCtrl.getReminderListCtrl(stage, selectedTask).addNewReminder(fullDateString);
         System.out.println("After change");
         selectedTask.getReminderList().printReminderList();
+        
         Stage stage = (Stage) createReminderButton.getScene().getWindow();
         TaskCtrl.getTaskCtrl(stage, selectedTask).showUI();
+        
         
     }
     

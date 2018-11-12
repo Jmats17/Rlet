@@ -7,27 +7,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.ReminderUICtrl">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="469.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.ReminderUICtrl">
    <children>
-      <Text layoutX="31.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Reminder" wrappingWidth="103.33673095703125">
+      <Text layoutX="151.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Reminder" wrappingWidth="167.0000049099326">
          <font>
-            <Font size="14.0" />
+            <Font size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="dateField" layoutX="273.0" layoutY="104.0" />
-      <TextField fx:id="timeField" layoutX="273.0" layoutY="145.0" />
-      <Button fx:id="createReminderButton" layoutX="361.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleCreateReminderButtonAction" text="Create">
+      <TextField fx:id="dateField" layoutX="151.0" layoutY="104.0" promptText="dd/MM/yy" />
+      <TextField fx:id="timeField" layoutX="151.0" layoutY="189.0" promptText="HH:mm:ss" />
+      <Button fx:id="createReminderButton" layoutX="190.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleCreateReminderButtonAction" prefHeight="35.0" prefWidth="89.0" text="Create">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="134.0" layoutY="107.0" prefHeight="20.0" prefWidth="89.0" text="dd/MM/yyyy">
+      <Label layoutX="151.0" layoutY="74.0" prefHeight="20.0" prefWidth="41.0" text="Date:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="134.0" layoutY="148.0" prefHeight="17.0" prefWidth="89.0" text="HH:mm:ss">
+      <Label layoutX="151.0" layoutY="159.0" prefHeight="17.0" prefWidth="89.0" text="Time:">
          <font>
             <Font size="14.0" />
          </font>

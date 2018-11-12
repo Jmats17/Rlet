@@ -55,15 +55,19 @@ public class TaskUICtrl implements Initializable{
     @FXML protected void handleMarkAsDoneButtonAction(ActionEvent event){
         
         Stage theStage = (Stage) markAsDone.getScene().getWindow();
-        theStage.hide();
+        //theStage.hide();
         selectedTask.markAsDone();
         TaskListCtrl.getTaskListCtrl(theStage).removeTask(selectedTask);
-        //need to go back to the tasklist to show the task is gone
-        //need to add the task to activity log
+        //ActivityLogCtrl.getActivityLogCtrl(theStage).addToLog(selectedTask);
+        //causes classcast exception
+        
+        Stage stage = (Stage) newReminder.getScene().getWindow();
+        TaskListCtrl.getTaskListCtrl(stage).showUI();
+       
         //need to update Persistent Data
         
-        //ActivityLogCtrl.getActivityLogCtrl(theStage);//.addToLog(selectedTask);
-        
+        //ActivityLogCtrl.getActivityLogCtrl(theStage).addToLog(selectedTask);
+        //causes classcast exception
     }
     
     @FXML protected void handleAddReminderButtonAction(ActionEvent event){
