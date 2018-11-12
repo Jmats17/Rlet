@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.ActivityLogUICtrl">
+   <children>
+      <Text layoutX="21.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activity Log" wrappingWidth="137.13671875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TableView fx:id="taskListTable" layoutX="21.0" layoutY="64.0" onMouseClicked="#handleViewTaskButtonAction" prefHeight="329.0" prefWidth="561.0">
+         <columns>
+            <TableColumn fx:id="taskName" prefWidth="122.199951171875" text="Name" />
+            <TableColumn fx:id="assignedUser" prefWidth="120.0" text="Assigned User" />
+            <TableColumn fx:id="taskDueDate" minWidth="100.0" prefWidth="200.0" text="Due Date" />
+            <TableColumn fx:id="taskStatus" prefWidth="119.4000244140625" text="Completed" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

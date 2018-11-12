@@ -6,28 +6,32 @@
 package rlet;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 /**
  *
  * @author kviro
  */
 public class ActivityLog implements Serializable{
     
-    ArrayList<Task> taskLog;
+    private ArrayList<Task> activityLog;
     
     public ActivityLog(){
         
-        taskLog = new ArrayList<Task>();
+        activityLog = new ArrayList<Task>();
         
     }
     
     public void addItem(Task t){
         
-        taskLog.add(t);
+        activityLog.add(t);
         
     }
     
-    public ArrayList<Task> getLog(){
-        return taskLog;
+    public ArrayList<Task> getActivityLog() {
+       
+        return activityLog;
     }
     
     

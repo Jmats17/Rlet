@@ -40,10 +40,10 @@ public class NavigationUICtrl {
     
     @FXML protected void handleActivityLogButtonAction(ActionEvent event){
         
-        actiontarget.setText("Activity Log button pressed");
-        Stage theStage = (Stage) actiontarget.getScene().getWindow();
+        //actiontarget.setText("Activity Log button pressed");
+        Stage theStage = (Stage) activityLogButton.getScene().getWindow();
         theStage.hide();
-        NavigationCtrl.getNavigationCtrl(theStage).getActivityLogCtrl(theStage);
+        ActivityLogCtrl.getActivityLogCtrl(theStage);
         
     }
     

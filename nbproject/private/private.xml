@@ -3,23 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/TaskUI.fxml</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/Reminder.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/ReminderList.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/TaskListCtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/ActivityLogUICtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/ReminderCtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/ActivityLog.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/ReminderListCtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/PersistentDataCollection.java</file>
             <file>file:/D:/Documents/GitHub/Rlet/src/rlet/TaskListUICtrl.java</file>
             <file>file:/D:/Documents/GitHub/Rlet/src/rlet/TaskUICtrl.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/NavigationCtrl.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/TaskListUI.fxml</file>
             <file>file:/D:/Documents/GitHub/Rlet/src/rlet/TaskCtrl.java</file>
-=======
-            <file>file:/Users/Justin/NetBeansProjects/RLET_v1/src/rlet/Task.java</file>
-            <file>file:/Users/Justin/NetBeansProjects/RLET_v1/src/rlet/User.java</file>
-            <file>file:/Users/Justin/NetBeansProjects/RLET_v1/src/rlet/TaskList.java</file>
-            <file>file:/Users/Justin/NetBeansProjects/RLET_v1/src/rlet/ActivityLogCtrl.java</file>
-            <file>file:/Users/Justin/NetBeansProjects/RLET_v1/src/rlet/ActivityLog.java</file>
->>>>>>> d1952825ee987926168a48dbb4fdeab15634878a
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/ActivityLogCtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/PersistentDataCtrl.java</file>
         </group>
     </open-files>
 </project-private>

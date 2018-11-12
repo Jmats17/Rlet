@@ -5,6 +5,7 @@
  */
 package rlet;
 
+import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,11 +23,13 @@ public class ActivityLogCtrl {
     @FXML private Text actiontarget;
     
     private static ActivityLogCtrl theActivityLogCtrl;
-    //private ActivityLog activityLog;
+    private ActivityLog activityLog;
+    
    
     private ActivityLogCtrl(Stage theExistingStage){
         
         //activityLog = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog();
+        //causes exception
         stage = theExistingStage;
         this.setUpActivityLogScene();
         stage.show();
@@ -58,8 +61,12 @@ public class ActivityLogCtrl {
     
     public void addToLog(Task t){
         
-        //activityLog.addItem(t);
+        activityLog.addItem(t);
         
+    }
+    
+     public ArrayList<Task> getActivityLog(){
+        return activityLog.getActivityLog();
     }
     
     

@@ -41,8 +41,7 @@ public class TaskUICtrl implements Initializable{
     @FXML private Button newReminder;
     private ObservableList<Reminder> reminderList;
     
-    Stage taskStage;
-    Scene taskScene;
+   
  
     
     @Override
@@ -66,8 +65,8 @@ public class TaskUICtrl implements Initializable{
        
         //need to update Persistent Data
         
-        //ActivityLogCtrl.getActivityLogCtrl(theStage).addToLog(selectedTask);
-        //causes classcast exception
+        
+       
     }
     
     @FXML protected void handleAddReminderButtonAction(ActionEvent event){

@@ -25,34 +25,34 @@ import javafx.stage.Stage;
  */
 public class ActivityLogUICtrl implements Initializable{
     @FXML private TableView<Task> activityLogTable;
-    @FXML private TableColumn taskName;
-    @FXML private TableColumn taskDueDate;
-    @FXML private TableColumn taskStatus;
-    @FXML private TableColumn assignedUser;
-    private ObservableList<Task> taskList;
+    @FXML private TableColumn<Task, String> taskName;
+    @FXML private TableColumn<Task, Date> taskDueDate;
+    @FXML private TableColumn<Task, Boolean> taskStatus;
+    @FXML private TableColumn<Task, String> assignedUser;
+    private ObservableList<Task> activityLog;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        taskList = FXCollections.observableArrayList(PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog().getLog());
-        activityLogTable.setItems(taskList);
+        //activityLog = FXCollections.observableArrayList(PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog().getActivityLog());
+        //activityLogTable.setItems(activityLog);
         
         taskName.setCellValueFactory(new PropertyValueFactory<Task, String>("taskName"));
-        /* getValue() not working
+        
         taskName.setCellValueFactory(cellData -> {
         Task currentTask = cellData.getValue();
         return new ReadOnlyStringWrapper(currentTask.getName());
         });
-        */
+       
         assignedUser.setCellValueFactory(new PropertyValueFactory<Task, String>("user"));
         taskDueDate.setCellValueFactory(new PropertyValueFactory<Task, Date>("dueDate"));
         
         taskStatus.setCellValueFactory(new PropertyValueFactory<Task, Boolean>("completed"));
-        /* getValue() not working
+       
         taskStatus.setCellValueFactory(cellData -> {
         Task currentTask = cellData.getValue();
         return new ReadOnlyBooleanWrapper(currentTask.getStatus());
         });
-        */
+       
     }
     
     @FXML protected void handleViewTaskButtonAction(){

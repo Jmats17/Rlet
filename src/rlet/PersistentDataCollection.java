@@ -6,6 +6,7 @@
 package rlet;
 
 import java.io.Serializable;
+import javafx.collections.ObservableList;
 
 /**
  *
