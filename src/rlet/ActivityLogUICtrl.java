@@ -33,8 +33,8 @@ public class ActivityLogUICtrl implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //activityLog = FXCollections.observableArrayList(PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog().getActivityLog());
-        //activityLogTable.setItems(activityLog);
+        activityLog = FXCollections.observableArrayList(PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog().getActivityLog());
+        activityLogTable.setItems(activityLog);
         
         taskName.setCellValueFactory(new PropertyValueFactory<Task, String>("taskName"));
         

@@ -57,13 +57,13 @@ public class TaskUICtrl implements Initializable{
         //theStage.hide();
         selectedTask.markAsDone();
         TaskListCtrl.getTaskListCtrl(theStage).removeTask(selectedTask);
-        //ActivityLogCtrl.getActivityLogCtrl(theStage).addToLog(selectedTask);
-        //causes classcast exception
+        ActivityLogCtrl.getActivityLogCtrl(theStage).addToLog(selectedTask);
+        
         
         Stage stage = (Stage) newReminder.getScene().getWindow();
         TaskListCtrl.getTaskListCtrl(stage).showUI();
        
-        //need to update Persistent Data
+        PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
         
         
        

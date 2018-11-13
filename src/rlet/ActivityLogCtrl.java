@@ -28,7 +28,7 @@ public class ActivityLogCtrl {
    
     private ActivityLogCtrl(Stage theExistingStage){
         
-        //activityLog = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog();
+        activityLog = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog();
         //causes exception
         stage = theExistingStage;
         this.setUpActivityLogScene();

@@ -13,10 +13,10 @@ import java.io.*;
  */
 
 
-public class UserList {
+public class UserList implements Serializable{
 
     private ArrayList<User> userList = new ArrayList<User>();
-    private String dataListFileName = "dataList.ser";
+    
 
     
     public UserList(){
@@ -25,48 +25,17 @@ public class UserList {
       
         if(userList.isEmpty() || userList == null){
             
+            //PersistentDataCollection dataStore = PersistentDataCtrl.getPersistentDataCtrl().readSerializedDataModel();
             this.createTestUserList();
-            this.writeDataListFile();
-            this.readDataListFile();
+            
             
         }
         
         this.printUserList();
     }
     
-    public void readDataListFile(){
-        FileInputStream fis = null;
-        ObjectInputStream in = null;
-        try {
-            fis = new FileInputStream(dataListFileName);
-            in = new ObjectInputStream(fis);
-            userList = (ArrayList<User>)in.readObject();
-            in.close();
-            if(!userList.isEmpty()){
-                System.out.println("There are users in the user list");
-            }
-        }
-        catch(IOException ex) {
-            ex.printStackTrace();
-        }
-        catch(ClassNotFoundException ex){
-            ex.printStackTrace();
-        }
-    }
     
-    public void writeDataListFile(){
-        FileOutputStream fos = null;
-        ObjectOutputStream out = null;
-        try{
-            fos = new FileOutputStream(dataListFileName);
-            out = new ObjectOutputStream(fos);
-            out.writeObject(userList);
-            out.close();
-        }
-        catch(IOException ex){
-            ex.printStackTrace();
-        }
-    }
+    
     
     public void createTestUserList(){
         for (int i = 0; i < 4; i++){

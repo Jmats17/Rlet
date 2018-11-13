@@ -5,6 +5,7 @@
  */
 package rlet;
 
+import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.stage.Stage;
@@ -40,10 +41,21 @@ public class ReminderListCtrl {
     
     public void addNewReminder(String dateString){
         
-        reminderList.addReminder(dateString);
+        //reminderList.addReminder(dateString);
+        User u = (User)PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList().get(0);
+        User currentUser = LoginCtrl.getLoggedInUser();
+        int i = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList().indexOf(u);
+        User persistUser = (User) PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList().get(i);
+        //i = persistUser.getTaskList().getList().indexOf(this.selectedTask);
+        Task t = null;
+        for(Task tt : (ArrayList<Task>) persistUser.getTaskList().getList()){
+            if(tt.getName().equals(this.selectedTask.getName()) && tt.getDueDate().equals(this.selectedTask.getDueDate()))
+                t = tt;
+        }
+        //Task t = (Task) persistUser.getTaskList().getList().get(i);
+        t.getReminderList().addReminder(dateString);
+        PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
         
-        //PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
-        //something in persistentdatactrl or collection causes classcast exception
         
     }
     

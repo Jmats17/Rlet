@@ -10,6 +10,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 /**
  *
  * @author kviro
@@ -49,6 +50,8 @@ public class PersistentDataCtrl {
             fis = new FileInputStream(filePath);
             in = new ObjectInputStream(fis);
             thePersistentDataCollection = (PersistentDataCollection) in.readObject();
+//            ArrayList<Object> testList = new ArrayList<>();
+//            testList = (ArrayList) in.readObject();
             in.close();
         }
         catch(Exception e){

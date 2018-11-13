@@ -14,7 +14,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TableView fx:id="taskListTable" layoutX="21.0" layoutY="57.0" onMouseClicked="#handleViewTaskButtonAction" prefHeight="336.0" prefWidth="561.0">
+      <TableView fx:id="activityLogTable" layoutX="21.0" layoutY="57.0" onMouseClicked="#handleViewTaskButtonAction" prefHeight="336.0" prefWidth="561.0">
          <columns>
             <TableColumn fx:id="taskName" prefWidth="122.199951171875" text="Name" />
             <TableColumn fx:id="assignedUser" prefWidth="133.5999755859375" text="Assigned User" />

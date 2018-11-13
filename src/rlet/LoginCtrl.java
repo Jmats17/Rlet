@@ -6,6 +6,7 @@
 package rlet;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,6 +49,14 @@ public class LoginCtrl implements Initializable {
         if(loggedInUser != null){
             Stage stage = (Stage)passwordField.getScene().getWindow();
             stage.hide(); //hide stage before passing control
+           // int i = .indexOf(loggedInUser);
+           User user = null;
+            for(User u : (ArrayList<User>)PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList()){
+                if(u.getUsername().equals(loggedInUser.getUsername()))
+                    user = u;
+            }
+            //User u = (User) PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList().get(i);
+           loggedInUser.getTaskList().setTaskList((ArrayList<Task>)user.getTaskList().getList());
             NavigationCtrl theNavigationCtrl = NavigationCtrl.getNavigationCtrl(stage, loggedInUser);
             
         }

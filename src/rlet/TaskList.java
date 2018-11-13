@@ -20,10 +20,21 @@ public class TaskList implements Serializable{
     public TaskList(String username){
         
         listOwner = username;
-            
+//        ArrayList<User> userList = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList();
+//        User userPersist = null;
+//        for(User u : userList){
+//            if(u.username.equals(LoginCtrl.getLoggedInUser().getUsername()) && u.password.equals(LoginCtrl.getLoggedInUser().getPassword())){
+//                userPersist = u;
+//            }
+//        }
+//       // User userPersist = (User) PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList().get(loggedInUserID);
+//        if(userPersist.getTaskList().getList() == null || userPersist.getTaskList().getList().isEmpty()){
         this.createTestTaskList();
-           
-        
+//        }
+//        else{
+//            this.taskList = userPersist.getTaskList().getList();
+//        }
+//        
         this.printTaskList();
     }
  
@@ -37,6 +48,10 @@ public class TaskList implements Serializable{
         //System.out.println("The TaskList is: " + taskList);
     }
 
+    public void setTaskList(ArrayList<Task> taskList){
+        this.taskList = taskList;
+    }
+    
     public void printTaskList(){
         
         System.out.println("The user has these tasks");
