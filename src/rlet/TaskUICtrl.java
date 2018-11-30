@@ -78,6 +78,7 @@ public class TaskUICtrl implements Initializable{
     }
 
     public void setTask(Task t) {
+        
         this.selectedTask = t;
         taskNameValue.setText(selectedTask.getName());
         taskDueDateValue.setText(selectedTask.getDueDate().toString());

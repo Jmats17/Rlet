@@ -15,29 +15,28 @@ import java.io.*;
 
 public class UserList implements Serializable{
 
-    private ArrayList<User> userList = new ArrayList<User>();
-    
-
+    private ArrayList<User> userList;
     
     public UserList(){
         
-        //this.readDataListFile();
+        
       
         if(userList.isEmpty() || userList == null){
             
-            //PersistentDataCollection dataStore = PersistentDataCtrl.getPersistentDataCtrl().readSerializedDataModel();
+            
             this.createTestUserList();
             
             
         }
         
-        this.printUserList();
+        //this.printUserList();
     }
     
     
     
     
     public void createTestUserList(){
+        userList = new ArrayList<User>();
         for (int i = 0; i < 4; i++){
             String testUsername = "Test" + i;
             char[] testPassword = {'T', 'e', 's', 't'};

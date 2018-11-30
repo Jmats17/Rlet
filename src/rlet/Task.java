@@ -8,6 +8,7 @@ package rlet;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 /**
  *
@@ -16,8 +17,9 @@ import java.util.Date;
 public class Task implements Serializable{
     
     private String taskName;
-   
+    private double cost;
     private Date dueDate;
+    
     private Boolean completed = false;
     private SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     protected ReminderList reminderList; 
@@ -34,6 +36,8 @@ public class Task implements Serializable{
         }
         reminderList = new ReminderList();
     }
+    
+   
     
     public String getName(){
         
@@ -68,6 +72,12 @@ public class Task implements Serializable{
     public String getAssignedUser(){
         
         return assignedUser;
+        
+    }
+    
+    public void setCost(double d){
+        
+        cost = d;
         
     }
     

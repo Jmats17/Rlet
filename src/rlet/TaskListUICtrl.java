@@ -64,12 +64,12 @@ public class TaskListUICtrl implements Initializable{
         
     }
     
-    @FXML protected void handleAddTaskButtonAction(ActionEvent event){
+    @FXML protected void handleAddTaskButtonAction(){
         
         
-       // Stage theStage = (Stage) taskName.getTableView().getScene().getWindow();
+        Stage theStage = (Stage) addTask.getScene().getWindow();
         theStage.hide();
-        TaskCtrl.getTaskCtrl(theStage, null).reqNewTask();
+        NewTaskCtrl.getNewTaskCtrl(theStage);
         
     }
     

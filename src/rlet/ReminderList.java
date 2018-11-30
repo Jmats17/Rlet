@@ -21,7 +21,7 @@ public class ReminderList implements Serializable{
         
         this.createTestReminderList();
            
-        this.printReminderList();
+        //this.printReminderList();
         
     }
     public void createTestReminderList(){

@@ -53,7 +53,7 @@ public class TaskCtrl {
         }
         return taskCtrl; 
     } 
-    
+    /*
     public void reqNewTask(){
  
         try {
@@ -67,7 +67,7 @@ public class TaskCtrl {
             e.printStackTrace();
         }
     }
-    
+    */
     public void showUI(){
         try {
             //load new fxml

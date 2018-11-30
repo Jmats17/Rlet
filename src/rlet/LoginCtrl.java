@@ -28,8 +28,9 @@ public class LoginCtrl implements Initializable {
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField = new PasswordField();
     
-    private UserList testList = new UserList();
+    //private UserList testList = new UserList();
     private static User loggedInUser;
+    private UserList userList = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList();
     
     public LoginCtrl(){
         
@@ -44,19 +45,19 @@ public class LoginCtrl implements Initializable {
         String username = getUsername();
         char[] password = getPassword();
         
-        loggedInUser = testList.authenticate(username, password);
+        loggedInUser = userList.authenticate(username, password);
         
         if(loggedInUser != null){
             Stage stage = (Stage)passwordField.getScene().getWindow();
-            stage.hide(); //hide stage before passing control
-           // int i = .indexOf(loggedInUser);
-           User user = null;
+            stage.hide(); 
+         
+            User user = null;
             for(User u : (ArrayList<User>)PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList()){
                 if(u.getUsername().equals(loggedInUser.getUsername()))
                     user = u;
             }
             //User u = (User) PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList().get(i);
-           loggedInUser.getTaskList().setTaskList((ArrayList<Task>)user.getTaskList().getList());
+            loggedInUser.getTaskList().setTaskList((ArrayList<Task>)user.getTaskList().getList());
             NavigationCtrl theNavigationCtrl = NavigationCtrl.getNavigationCtrl(stage, loggedInUser);
             
         }

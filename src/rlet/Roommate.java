@@ -19,5 +19,6 @@ public class Roommate extends User{
         super(s, c);
         
     }
+   
     
 }

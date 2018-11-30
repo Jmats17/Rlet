@@ -16,7 +16,7 @@ public class PersistentDataCollection implements Serializable{
     
     private UserList theUserList;
     private ActivityLog theActivityLog;
-    
+    private CostTracker theCostTracker;
     
     public PersistentDataCollection(){
         if(theUserList == null){
@@ -26,6 +26,11 @@ public class PersistentDataCollection implements Serializable{
         if(theActivityLog == null){
             theActivityLog = new ActivityLog();
         }
+        
+        if(theCostTracker == null){
+            theCostTracker = new CostTracker();
+        }
+
     }
     
     public UserList getUserList(){
@@ -34,6 +39,10 @@ public class PersistentDataCollection implements Serializable{
     
     public ActivityLog getActivityLog(){
         return theActivityLog;
+    }
+    
+    public CostTracker getCostTracker(){
+        return theCostTracker;
     }
     
 }
