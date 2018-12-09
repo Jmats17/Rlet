@@ -70,7 +70,7 @@ public class TaskUICtrl implements Initializable{
         
         Stage theStage = (Stage) markAsDone.getScene().getWindow();
         theStage.hide();
-        ReminderCtrl.getReminderCtrl(theStage, selectedTask);
+        ReminderCtrl.getReminderCtrl(theStage, selectedTask).showUI(selectedTask);
         
     }
 

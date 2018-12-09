@@ -22,16 +22,7 @@ public class NewResourceCtrl {
     private NewResourceCtrl(Stage existingStage){
         stage = existingStage;
         
-        try {
-           
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewResourceUI.fxml"));
-            Parent root = fxmlLoader.load();
-            stage.setTitle("New Resource");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        showUI();
     }
     
     public static NewResourceCtrl getNewResourceCtrl(Stage existingStage){
@@ -44,4 +35,17 @@ public class NewResourceCtrl {
         return newResourceCtrl; 
         
     }  
+    
+    public void showUI(){
+        try {
+           
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewResourceUI.fxml"));
+            Parent root = fxmlLoader.load();
+            stage.setTitle("New Resource");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

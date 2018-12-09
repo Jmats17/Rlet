@@ -49,19 +49,21 @@ public class LoginCtrl implements Initializable {
         char[] password = getPassword();
         
         loggedInUser = userList.authenticate(username, password);
-        
+        System.out.println(loggedInUser.getUsername());
         if(loggedInUser != null){
             Stage stage = (Stage)passwordField.getScene().getWindow();
             stage.hide(); 
          
             User user = null;
+            /*
             for(User u : (ArrayList<User>)PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList()){
                 if(u.getUsername().equals(loggedInUser.getUsername()))
                     user = u;
                     loggedInUser = u;
             }
+*/
             //User u = (User) PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList().get(i);
-            loggedInUser.getTaskList().setTaskList((ArrayList<Task>)user.getTaskList().getList());
+            //loggedInUser.getTaskList().setTaskList((ArrayList<Task>)user.getTaskList().getList());
             NavigationCtrl theNavigationCtrl = NavigationCtrl.getNavigationCtrl(stage, loggedInUser);
             
         }
@@ -93,7 +95,8 @@ public class LoginCtrl implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         userList = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList();
-        //userList.printUserList();
+        userList.printUserList();
+        
        
     }    
     

@@ -23,16 +23,7 @@ public class NewTaskCtrl {
     private NewTaskCtrl(Stage existingStage){
         stage = existingStage;
         
-        try {
-           
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewTaskUI.fxml"));
-            Parent root = fxmlLoader.load();
-            stage.setTitle("Task List");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        showUI();
     }
     
     public static NewTaskCtrl getNewTaskCtrl(Stage existingStage){
@@ -45,4 +36,17 @@ public class NewTaskCtrl {
         return newTaskCtrl; 
         
     }  
+    
+    public void showUI(){
+         try {
+           
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewTaskUI.fxml"));
+            Parent root = fxmlLoader.load();
+            stage.setTitle("Task List");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

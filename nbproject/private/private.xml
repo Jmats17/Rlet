@@ -5,21 +5,16 @@
             <url>src/rlet/ResourceTrackerUICtrl.java</url>
             <bookmark id="1">
                 <name/>
-                <line>96</line>
+                <line>98</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/ResourceTrackerUICtrl.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/ResourceCtrl.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/ResourceTracker.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/Resource.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/NewResourceUICtrl.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/NewResourceCtrl.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/ResourceTrackerCtrl.java</file>
-            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/ResourceUICtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/TaskListCtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/TaskListUICtrl.java</file>
+            <file>file:/D:/Documents/GitHub/Rlet/src/rlet/NavigationUICtrl.java</file>
         </group>
     </open-files>
 </project-private>

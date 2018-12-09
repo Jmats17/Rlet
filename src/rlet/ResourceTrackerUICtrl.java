@@ -112,14 +112,14 @@ public class ResourceTrackerUICtrl implements Initializable{
     @FXML protected void handleAddResourceButtonAction(ActionEvent event){
         
         Stage theStage = (Stage)electricUsage.getScene().getWindow(); 
-        NewResourceCtrl.getNewResourceCtrl(theStage);
+        NewResourceCtrl.getNewResourceCtrl(theStage).showUI();
         
     }
     
     @FXML protected void handleViewResourceButtonAction(){
         Stage theStage = (Stage) electricUsage.getScene().getWindow();
         Resource currentlySelectedResource = this.resourceTable.getSelectionModel().getSelectedItem();
-        ResourceCtrl.getResourceCtrl(theStage, currentlySelectedResource);
+        ResourceCtrl.getResourceCtrl(theStage, currentlySelectedResource).showUI();
     }
     
     @FXML protected void handleBackButtonAction(ActionEvent e){
@@ -129,6 +129,7 @@ public class ResourceTrackerUICtrl implements Initializable{
         NavigationCtrl.getNavigationCtrl(theStage).setUpNavigationScene();
         
     }
+    
     
     
 }

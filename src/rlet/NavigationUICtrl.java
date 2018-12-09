@@ -46,38 +46,24 @@ public class NavigationUICtrl implements Initializable{
         
         Stage theStage = (Stage)username.getScene().getWindow();
         theStage.hide();
-        if(taskButtonPressed == false){
-            taskButtonPressed = true;
-            NavigationCtrl.getNavigationCtrl(theStage).getTaskListCtrl(theStage);
-        } else {
-            NavigationCtrl.getNavigationCtrl(theStage).getTaskListCtrl(theStage).showUI();
-        }
-        
+       
+        TaskListCtrl.getTaskListCtrl(theStage).showUI();
     }
     
     @FXML protected void handleActivityLogButtonAction(ActionEvent event){
         
         Stage theStage = (Stage) username.getScene().getWindow();
         theStage.hide();
-        if(activityLogButtonPressed == false){
-            activityLogButtonPressed = true;
-            ActivityLogCtrl.getActivityLogCtrl(theStage);
-        }else{
-            ActivityLogCtrl.getActivityLogCtrl(theStage).showUI();
-        }
-        
+       
+        ActivityLogCtrl.getActivityLogCtrl(theStage).showUI();
     }
     
     @FXML protected void handleTrackResourcesButtonAction(ActionEvent event){
         
         Stage theStage = (Stage) username.getScene().getWindow();
         theStage.hide();
-        if(resourceButtonPressed == false){
-            resourceButtonPressed = true;
-            ResourceTrackerCtrl.getResourceTrackerCtrl(theStage);
-        } else {
-            ResourceTrackerCtrl.getResourceTrackerCtrl(theStage).showUI();
-        }
+        
+        ResourceTrackerCtrl.getResourceTrackerCtrl(theStage).showUI();
     }
     
     public void setUser(User u){

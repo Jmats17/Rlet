@@ -47,13 +47,15 @@ public class ReminderListCtrl {
         int i = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList().indexOf(u);
         User persistUser = (User) PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList().get(i);
         //i = persistUser.getTaskList().getList().indexOf(this.selectedTask);
+        /*
         Task t = null;
         for(Task tt : (ArrayList<Task>) persistUser.getTaskList().getList()){
             if(tt.getName().equals(this.selectedTask.getName()) && tt.getDueDate().equals(this.selectedTask.getDueDate()))
                 t = tt;
         }
+*/
         //Task t = (Task) persistUser.getTaskList().getList().get(i);
-        t.getReminderList().addReminder(dateString);
+        selectedTask.getReminderList().addReminder(dateString);
         PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
         
         

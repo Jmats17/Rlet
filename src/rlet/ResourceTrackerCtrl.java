@@ -84,6 +84,7 @@ public class ResourceTrackerCtrl {
     }
     
     public void showUI(){
+      
        try {
             //load new fxml
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ResourceTrackerUI.fxml"));

@@ -37,6 +37,26 @@ public class ActivityLogUICtrl implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        showUI();
+    }
+    
+    @FXML protected void handleViewTaskButtonAction(){
+        
+        Stage theStage = (Stage) activityLogTable.getScene().getWindow();
+        Task currentlySelectedTask = this.activityLogTable.getSelectionModel().getSelectedItem();
+        TaskCtrl.getTaskCtrl(theStage, currentlySelectedTask).showUI();
+        
+    }
+    
+    @FXML protected void handleBackButtonAction(ActionEvent e){
+        
+        Stage theStage = (Stage) activityLogTable.getScene().getWindow();
+        theStage.hide();
+        NavigationCtrl.getNavigationCtrl(theStage).setUpNavigationScene();
+        
+    }
+    
+    public void showUI(){
         activityLog = FXCollections.observableArrayList(PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog().getActivityLog());
         activityLogTable.setItems(activityLog);
         
@@ -56,25 +76,7 @@ public class ActivityLogUICtrl implements Initializable{
         Task currentTask = cellData.getValue();
         return new ReadOnlyBooleanWrapper(currentTask.getStatus());
         });
-       
     }
-    
-    @FXML protected void handleViewTaskButtonAction(){
-        
-        Stage theStage = (Stage) activityLogTable.getScene().getWindow();
-        Task currentlySelectedTask = this.activityLogTable.getSelectionModel().getSelectedItem();
-        TaskCtrl.getTaskCtrl(theStage, currentlySelectedTask);
-        
-    }
-    
-    @FXML protected void handleBackButtonAction(ActionEvent e){
-        
-        Stage theStage = (Stage) activityLogTable.getScene().getWindow();
-        theStage.hide();
-        NavigationCtrl.getNavigationCtrl(theStage).setUpNavigationScene();
-        
-    }
-    
  
     
     

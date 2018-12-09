@@ -48,6 +48,7 @@ public class TaskListUICtrl implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
+        //taskListTable.getItems().clear(); doesn't solve problem
         taskList = FXCollections.observableArrayList(LoginCtrl.getLoggedInUser().getTaskList().getList());
         
         taskListTable.setItems(taskList);
@@ -69,7 +70,7 @@ public class TaskListUICtrl implements Initializable{
         
         Stage theStage = (Stage) addTask.getScene().getWindow();
         theStage.hide();
-        NewTaskCtrl.getNewTaskCtrl(theStage);
+        NewTaskCtrl.getNewTaskCtrl(theStage).showUI();
         
     }
     
@@ -77,7 +78,7 @@ public class TaskListUICtrl implements Initializable{
         
         theStage = (Stage) addTask.getScene().getWindow();
         Task currentlySelectedTask = this.taskListTable.getSelectionModel().getSelectedItem();
-        TaskCtrl.getTaskCtrl(theStage, currentlySelectedTask);
+        TaskCtrl.getTaskCtrl(theStage, currentlySelectedTask).showUI();
         
     }
     
