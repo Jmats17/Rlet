@@ -53,14 +53,19 @@ public class NavigationCtrl {
     }
     
     @FXML public void setUpNavigationScene(){
-        Parent root;
+       
         Scene scene;
         try{
-            root = FXMLLoader.load(getClass().getResource("NavigationUI.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NavigationUI.fxml"));
+            Parent root = fxmlLoader.load();
             scene = new Scene(root);
-            stage.setTitle("Navigation");
+            stage.setTitle("Main Menu");
             stage.setScene(scene);
             stage.show();
+            
+            NavigationUICtrl controller = (NavigationUICtrl)fxmlLoader.getController();
+
+            controller.setUser(user); 
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -82,13 +87,12 @@ public class NavigationCtrl {
         return TaskListCtrl.getTaskListCtrl(theStage);
     }
     
-   
-    
-    
     public PersistentDataCtrl getPersistentDataCtrl(){
         return PersistentDataCtrl.getPersistentDataCtrl();
     }
-   
+    
+    
+    
     public void exit(){
         System.exit(0);
     }

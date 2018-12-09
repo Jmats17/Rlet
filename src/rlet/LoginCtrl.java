@@ -28,9 +28,12 @@ public class LoginCtrl implements Initializable {
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField = new PasswordField();
     
-    //private UserList testList = new UserList();
+    
     private static User loggedInUser;
-    private UserList userList = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList();
+    private UserList userList;//PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList();
+    
+    
+    
     
     public LoginCtrl(){
         
@@ -55,6 +58,7 @@ public class LoginCtrl implements Initializable {
             for(User u : (ArrayList<User>)PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList()){
                 if(u.getUsername().equals(loggedInUser.getUsername()))
                     user = u;
+                    loggedInUser = u;
             }
             //User u = (User) PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList().getList().get(i);
             loggedInUser.getTaskList().setTaskList((ArrayList<Task>)user.getTaskList().getList());
@@ -83,9 +87,14 @@ public class LoginCtrl implements Initializable {
         
     }
     
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        userList = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getUserList();
+        //userList.printUserList();
+       
     }    
     
 }

@@ -39,6 +39,7 @@ public class TaskListUICtrl implements Initializable{
     @FXML private TableColumn<Task, Date> taskDueDate;
     @FXML private TableColumn<Task, Boolean> taskStatus;
     @FXML private Button addTask;
+    @FXML private Button backButton;
     private ObservableList<Task> taskList;
     
     private Stage theStage;
@@ -50,7 +51,7 @@ public class TaskListUICtrl implements Initializable{
         taskList = FXCollections.observableArrayList(LoginCtrl.getLoggedInUser().getTaskList().getList());
         
         taskListTable.setItems(taskList);
-        taskName.setCellValueFactory(new PropertyValueFactory<Task, String>("taskName"));
+        //taskName.setCellValueFactory(new PropertyValueFactory<Task, String>("taskName"));
         taskName.setCellValueFactory(cellData -> {
         Task currentTask = cellData.getValue();
         return new ReadOnlyStringWrapper(currentTask.getName());
@@ -64,8 +65,7 @@ public class TaskListUICtrl implements Initializable{
         
     }
     
-    @FXML protected void handleAddTaskButtonAction(){
-        
+    @FXML protected void handleAddTaskButtonAction(ActionEvent e){
         
         Stage theStage = (Stage) addTask.getScene().getWindow();
         theStage.hide();
@@ -75,16 +75,20 @@ public class TaskListUICtrl implements Initializable{
     
     @FXML protected void handleViewTaskButtonAction(){
         
-        //actiontarget.setText("View Task button pressed");
-        
         theStage = (Stage) addTask.getScene().getWindow();
         Task currentlySelectedTask = this.taskListTable.getSelectionModel().getSelectedItem();
         TaskCtrl.getTaskCtrl(theStage, currentlySelectedTask);
         
-        
     }
     
-    
+    @FXML protected void handleBackButtonAction(ActionEvent e){
+        
+        Stage theStage = (Stage) addTask.getScene().getWindow();
+        theStage.hide();
+        NavigationCtrl.getNavigationCtrl(theStage).setUpNavigationScene();
+        
+    }
+
 
    
 }

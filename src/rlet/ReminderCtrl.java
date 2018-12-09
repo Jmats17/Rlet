@@ -22,13 +22,27 @@ import javafx.stage.Stage;
  */
 public class ReminderCtrl {
     
-    Stage stage;
+    private Stage stage;//used to not be private
    
     private static ReminderCtrl reminderCtrl;
     private Task selectedTask;
     
     private ReminderCtrl(Stage existingStage, Task t){
         stage = existingStage;
+        showUI(t);
+    }
+    
+    public static ReminderCtrl getReminderCtrl(Stage existingStage, Task t){ 
+        if (reminderCtrl == null) {
+            
+            reminderCtrl = new ReminderCtrl(existingStage, t); 
+            
+        }
+        return reminderCtrl; 
+    } 
+   
+     
+    public void showUI(Task t){
         try {
            
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewReminderUI.fxml"));
@@ -44,16 +58,5 @@ public class ReminderCtrl {
             e.printStackTrace();
         }
     }
-    
-    public static ReminderCtrl getReminderCtrl(Stage existingStage, Task t){ 
-        if (reminderCtrl == null) {
-            
-            reminderCtrl = new ReminderCtrl(existingStage, t); 
-            
-        }
-        return reminderCtrl; 
-    } 
-   
-     
     
 }

@@ -6,11 +6,13 @@
 package rlet;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -20,7 +22,7 @@ import javafx.stage.Stage;
  */
 public class ReminderUICtrl implements Initializable{
     
-    @FXML private TextField dateField;
+    @FXML private DatePicker reminderDateField;
     @FXML private TextField timeField;
     @FXML private Button createReminderButton;
     private Stage stage;
@@ -33,20 +35,27 @@ public class ReminderUICtrl implements Initializable{
     
     @FXML protected void handleCreateReminderButtonAction(ActionEvent event){
         
-        String dateString = dateField.getText();
-        String timeString = timeField.getText();
-        String fullDateString = dateString + " " + timeString;
-        System.out.println("before change");
-        selectedTask.getReminderList().printReminderList();
+        LocalDate date = reminderDateField.getValue();
+        String s = date.toString();
+        String dateString = s.replace("-", "/");
+        String fullString = dateString + " " + timeField.getText();
+       
+        //System.out.println("before change");
+        //selectedTask.getReminderList().printReminderList();
         
-        ReminderListCtrl.getReminderListCtrl(stage, selectedTask).addNewReminder(fullDateString);
-        System.out.println("After change");
-        selectedTask.getReminderList().printReminderList();
+        ReminderListCtrl.getReminderListCtrl(stage, selectedTask).addNewReminder(fullString);
+       // System.out.println("After change");
+        //selectedTask.getReminderList().printReminderList();
         
         Stage stage = (Stage) createReminderButton.getScene().getWindow();
         TaskCtrl.getTaskCtrl(stage, selectedTask).showUI();
         
         
+    }
+    
+    @FXML protected void handleCancelButtonAction(ActionEvent event){
+        Stage stage = (Stage) createReminderButton.getScene().getWindow();
+        ReminderCtrl.getReminderCtrl(stage, selectedTask).showUI(selectedTask);
     }
     
     public void setTask(Task t) {

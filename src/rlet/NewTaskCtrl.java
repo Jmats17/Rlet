@@ -17,7 +17,7 @@ import javafx.stage.Stage;
  */
 public class NewTaskCtrl {
     
-    Stage stage;
+    private Stage stage;
     private static NewTaskCtrl newTaskCtrl;
      
     private NewTaskCtrl(Stage existingStage){

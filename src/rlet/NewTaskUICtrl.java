@@ -29,7 +29,8 @@ public class NewTaskUICtrl implements Initializable{
     @FXML private Label timeLabel;
     @FXML private Label nameLabel;
     @FXML private Label dueDateLabel;
-    
+    @FXML private Button cancelButton;
+     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
@@ -42,9 +43,9 @@ public class NewTaskUICtrl implements Initializable{
         
         LocalDate date = taskDueDateField.getValue();
         String s = date.toString();
-        System.out.println(s);
+        //System.out.println(s);
         String dateString = s.replace("-", "/");
-        System.out.println(dateString);
+        //System.out.println(dateString);
         String fullString = dateString + " " + taskTimeField.getText();
         
         Task newTask = new Task(taskName, fullString, NavigationCtrl.getNavigationCtrl(theStage).getCurrentUser().getUsername());
@@ -54,4 +55,11 @@ public class NewTaskUICtrl implements Initializable{
         
     }
     
+    @FXML protected void handleCancelButtonAction(ActionEvent event){
+        
+        Stage theStage = (Stage) submitButton.getScene().getWindow();
+        theStage.hide();
+        TaskListCtrl.getTaskListCtrl(theStage).showUI();
+    
+    }
 }

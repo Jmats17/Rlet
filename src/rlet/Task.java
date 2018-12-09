@@ -17,7 +17,7 @@ import java.util.Date;
 public class Task implements Serializable{
     
     private String taskName;
-    private double cost;
+    private double cost = 0.00;
     private Date dueDate;
     
     private Boolean completed = false;
@@ -37,7 +37,9 @@ public class Task implements Serializable{
         reminderList = new ReminderList();
     }
     
-   
+    public Double getCost(){
+        return (Double) cost;
+    }
     
     public String getName(){
         

@@ -23,7 +23,7 @@ public class TaskCtrl {
     @FXML private Text actiontarget;
     private static TaskCtrl taskCtrl;
     private Task selectedTask;
-    Stage stage;
+    private Stage stage; //used to not be private
    
     private TaskCtrl(Stage existingStage, Task existingTask){
         selectedTask = existingTask;
@@ -53,21 +53,7 @@ public class TaskCtrl {
         }
         return taskCtrl; 
     } 
-    /*
-    public void reqNewTask(){
- 
-        try {
-            //load new fxml
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewTaskUI.fxml"));
-            Parent root = fxmlLoader.load();
-            stage.setTitle("New Task");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    */
+    
     public void showUI(){
         try {
             //load new fxml

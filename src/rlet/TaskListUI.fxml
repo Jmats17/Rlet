@@ -7,9 +7,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleViewTaskButtonAction" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.TaskListUICtrl">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleViewTaskButtonAction" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.TaskListUICtrl">
    <children>
-      <TableView fx:id="taskListTable" layoutX="14.0" layoutY="65.0" onMouseClicked="#handleViewTaskButtonAction" prefHeight="326.0" prefWidth="573.0">
+      <TableView fx:id="taskListTable" layoutX="14.0" layoutY="65.0" onMouseClicked="#handleViewTaskButtonAction" prefHeight="288.0" prefWidth="573.0">
         <columns>
           <TableColumn fx:id="taskName" minWidth="100.0" prefWidth="150.0" text="Name" />
           <TableColumn fx:id="taskDueDate" minWidth="100.0" prefWidth="300.0" text="Due Date" />
@@ -20,6 +20,7 @@
          <font>
             <Font size="24.0" />
          </font></Text>
-      <Button fx:id="addTask" layoutX="503.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#handleAddTaskButtonAction" prefHeight="28.0" prefWidth="83.0" text="New Task" />
+      <Button fx:id="addTask" layoutX="503.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleAddTaskButtonAction" onMouseClicked="#handleAddTaskButtonAction" prefHeight="28.0" prefWidth="83.0" text="New Task" />
+      <Button fx:id="backButton" layoutX="51.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="32.0" prefWidth="65.0" text="Back" />
    </children>
 </AnchorPane>

@@ -31,16 +31,8 @@ public class TaskListCtrl {
         
         stage = existingStage;
         taskList = NavigationCtrl.getNavigationCtrl(stage).getCurrentUser().getTaskList();
-        try {
-            //load new fxml
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TaskListUI.fxml"));
-            Parent root = fxmlLoader.load();
-            stage.setTitle("Task List");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        showUI();
+        
     }
     
     public static TaskListCtrl getTaskListCtrl(Stage existingStage)
@@ -64,7 +56,8 @@ public class TaskListCtrl {
     public void removeTask(Task t){
         
         taskList.removeTask(t);
-        
+        PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
+        showUI();
     }
     
     public ObservableList<Task> getTaskList(){

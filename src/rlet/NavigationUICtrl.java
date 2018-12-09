@@ -5,8 +5,11 @@
  */
 package rlet;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
@@ -16,35 +19,70 @@ import javafx.stage.Stage;
  *
  * @author kviro
  */
-public class NavigationUICtrl {
+public class NavigationUICtrl implements Initializable{
     
     
     @FXML private Text actiontarget;
-    private static NavigationCtrl theNavigationUICtrl;
+    private static NavigationUICtrl theNavigationUICtrl;
     @FXML private Label username;
     @FXML private Button activityLogButton;
-    public NavigationUICtrl(){
+    @FXML private Button taskListButton;
+    @FXML private Label usernameLabel;
+    private boolean taskButtonPressed;
+    private boolean resourceButtonPressed;
+    private boolean activityLogButtonPressed;
+    private User user;
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         
-        
+        taskButtonPressed = false;
+        resourceButtonPressed = false;
+        activityLogButtonPressed = false;
         
     }
     
     @FXML protected void handleManageTasksButtonAction(ActionEvent event){
         
-        //actiontarget.setText("Task list button pressed");
         Stage theStage = (Stage)username.getScene().getWindow();
         theStage.hide();
-        NavigationCtrl.getNavigationCtrl(theStage).getTaskListCtrl(theStage);
+        if(taskButtonPressed == false){
+            taskButtonPressed = true;
+            NavigationCtrl.getNavigationCtrl(theStage).getTaskListCtrl(theStage);
+        } else {
+            NavigationCtrl.getNavigationCtrl(theStage).getTaskListCtrl(theStage).showUI();
+        }
         
     }
     
     @FXML protected void handleActivityLogButtonAction(ActionEvent event){
         
-        //actiontarget.setText("Activity Log button pressed");
-        Stage theStage = (Stage) activityLogButton.getScene().getWindow();
+        Stage theStage = (Stage) username.getScene().getWindow();
         theStage.hide();
-        ActivityLogCtrl.getActivityLogCtrl(theStage);
+        if(activityLogButtonPressed == false){
+            activityLogButtonPressed = true;
+            ActivityLogCtrl.getActivityLogCtrl(theStage);
+        }else{
+            ActivityLogCtrl.getActivityLogCtrl(theStage).showUI();
+        }
         
+    }
+    
+    @FXML protected void handleTrackResourcesButtonAction(ActionEvent event){
+        
+        Stage theStage = (Stage) username.getScene().getWindow();
+        theStage.hide();
+        if(resourceButtonPressed == false){
+            resourceButtonPressed = true;
+            ResourceTrackerCtrl.getResourceTrackerCtrl(theStage);
+        } else {
+            ResourceTrackerCtrl.getResourceTrackerCtrl(theStage).showUI();
+        }
+    }
+    
+    public void setUser(User u){
+        user = u;
+        usernameLabel.setText(user.getUsername());
     }
     
 }

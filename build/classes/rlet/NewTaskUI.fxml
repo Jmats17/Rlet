@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.NewTaskUICtrl">
    <children>
       <Text layoutX="270.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Task">
@@ -18,12 +17,12 @@
       </Text>
       <DatePicker fx:id="taskDueDateField" layoutX="213.0" layoutY="160.0" />
       <TextField fx:id="taskNameField" layoutX="213.0" layoutY="98.0" />
-      <Label layoutX="120.0" layoutY="101.0" text="Task Name">
+      <Label fx:id="nameLabel" layoutX="120.0" layoutY="101.0" text="Task Name">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="125.0" layoutY="164.0" text="Due Date">
+      <Label fx:id="dueDateLabel" layoutX="125.0" layoutY="164.0" text="Due Date">
          <font>
             <Font size="14.0" />
          </font>
@@ -34,10 +33,15 @@
          </font>
       </Button>
       <TextField fx:id="taskTimeField" layoutX="213.0" layoutY="221.0" />
-      <Label layoutX="154.0" layoutY="224.0" text="Time">
+      <Label fx:id="timeLabel" layoutX="154.0" layoutY="224.0" text="Time">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
+      <Button fx:id="cancelButton" layoutX="189.0" layoutY="272.0" mnemonicParsing="false" onAction="#handleCancelButtonAction" prefHeight="47.0" prefWidth="69.0" text="Cancel">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

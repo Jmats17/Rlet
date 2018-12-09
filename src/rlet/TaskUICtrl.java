@@ -32,6 +32,7 @@ public class TaskUICtrl implements Initializable{
     @FXML private Label taskNameValue;
     @FXML private Label taskDueDateValue;
     @FXML private Label taskStatusValue;
+    @FXML private Label taskCostValue;
     @FXML private Button markAsDone;
     private static TaskUICtrl TaskUICtrl;
     private Task selectedTask;
@@ -39,10 +40,9 @@ public class TaskUICtrl implements Initializable{
     @FXML private TableView<Reminder> reminderListTable;
     @FXML private TableColumn<Reminder, Date> reminderDate;
     @FXML private Button newReminder;
+    @FXML private Button backButton;
     private ObservableList<Reminder> reminderList;
     
-   
- 
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -54,14 +54,11 @@ public class TaskUICtrl implements Initializable{
     @FXML protected void handleMarkAsDoneButtonAction(ActionEvent event){
         
         Stage theStage = (Stage) markAsDone.getScene().getWindow();
-        //theStage.hide();
+        theStage.hide();
         selectedTask.markAsDone();
-        TaskListCtrl.getTaskListCtrl(theStage).removeTask(selectedTask);
+        //TaskListCtrl.getTaskListCtrl(theStage).removeTask(selectedTask);
         ActivityLogCtrl.getActivityLogCtrl(theStage).addToLog(selectedTask);
-        
-        
-        Stage stage = (Stage) newReminder.getScene().getWindow();
-        TaskListCtrl.getTaskListCtrl(stage).showUI();
+        TaskListCtrl.getTaskListCtrl(theStage).removeTask(selectedTask);
        
         PersistentDataCtrl.getPersistentDataCtrl().writeSerializedDataModel();
         
@@ -77,12 +74,20 @@ public class TaskUICtrl implements Initializable{
         
     }
 
+    @FXML protected void handleBackButtonAction(ActionEvent Event){
+        Stage theStage = (Stage) markAsDone.getScene().getWindow();
+        theStage.hide();
+        TaskListCtrl.getTaskListCtrl(theStage).showUI();
+    }
+
+    
     public void setTask(Task t) {
         
         this.selectedTask = t;
         taskNameValue.setText(selectedTask.getName());
         taskDueDateValue.setText(selectedTask.getDueDate().toString());
         taskStatusValue.setText(selectedTask.getStatus().toString());
+        taskCostValue.setText("$" + selectedTask.getCost().toString());
         
         reminderList = FXCollections.observableArrayList(selectedTask.getReminderList().getList());
         reminderDate.setCellValueFactory(new PropertyValueFactory<Reminder, Date>("date")); 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.ActivityLogUICtrl">
    <children>
@@ -14,7 +14,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TableView fx:id="activityLogTable" layoutX="21.0" layoutY="57.0" onMouseClicked="#handleViewTaskButtonAction" prefHeight="336.0" prefWidth="561.0">
+      <TableView fx:id="activityLogTable" layoutX="21.0" layoutY="57.0" onMouseClicked="#handleViewTaskButtonAction" prefHeight="286.0" prefWidth="561.0">
          <columns>
             <TableColumn fx:id="taskName" prefWidth="122.199951171875" text="Name" />
             <TableColumn fx:id="assignedUser" prefWidth="133.5999755859375" text="Assigned User" />
@@ -22,5 +22,6 @@
             <TableColumn fx:id="taskStatus" prefWidth="119.4000244140625" text="Completed" />
          </columns>
       </TableView>
+      <Button fx:id="backButton" layoutX="41.0" layoutY="350.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="42.0" prefWidth="78.0" text="Back" />
    </children>
 </AnchorPane>

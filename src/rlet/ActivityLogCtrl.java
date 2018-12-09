@@ -31,8 +31,8 @@ public class ActivityLogCtrl {
         activityLog = PersistentDataCtrl.getPersistentDataCtrl().getPersistentDataCollection().getActivityLog();
         
         stage = theExistingStage;
-        this.setUpActivityLogScene();
-        stage.show();
+        showUI();
+        
     }
     
     public static ActivityLogCtrl getActivityLogCtrl(Stage theStage){
@@ -45,7 +45,7 @@ public class ActivityLogCtrl {
         }
     }
     
-    @FXML public void setUpActivityLogScene(){
+    @FXML public void showUI(){
         Parent root;
         Scene scene;
         try{

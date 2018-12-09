@@ -12,8 +12,10 @@ import javafx.beans.property.ReadOnlyBooleanWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -29,7 +31,9 @@ public class ActivityLogUICtrl implements Initializable{
     @FXML private TableColumn<Task, Date> taskDueDate;
     @FXML private TableColumn<Task, Boolean> taskStatus;
     @FXML private TableColumn<Task, String> assignedUser;
+    @FXML private Button backButton;
     private ObservableList<Task> activityLog;
+    
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -60,6 +64,14 @@ public class ActivityLogUICtrl implements Initializable{
         Stage theStage = (Stage) activityLogTable.getScene().getWindow();
         Task currentlySelectedTask = this.activityLogTable.getSelectionModel().getSelectedItem();
         TaskCtrl.getTaskCtrl(theStage, currentlySelectedTask);
+        
+    }
+    
+    @FXML protected void handleBackButtonAction(ActionEvent e){
+        
+        Stage theStage = (Stage) activityLogTable.getScene().getWindow();
+        theStage.hide();
+        NavigationCtrl.getNavigationCtrl(theStage).setUpNavigationScene();
         
     }
     

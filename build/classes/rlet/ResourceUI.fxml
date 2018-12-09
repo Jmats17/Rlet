@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rlet.ResourceUICtrl">
+   <children>
+      <Label layoutX="28.0" layoutY="28.0" prefHeight="25.0" prefWidth="102.0" text="Resource Details">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="44.0" layoutY="103.0" prefHeight="150.0" prefWidth="213.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Name" GridPane.halignment="LEFT" />
+            <Label text="Amount Remaining" GridPane.rowIndex="1" />
+            <Label text="Total Cost" GridPane.rowIndex="2" />
+            <Label text="My Usage" GridPane.rowIndex="3" />
+            <Label text="My Cost Split" GridPane.rowIndex="4" />
+            <Label fx:id="nameValue" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+            <Label fx:id="amountValue" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Label fx:id="totalCostValue" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <Label fx:id="usageValue" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <Label fx:id="userCostValue" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Button fx:id="addAmountButton" layoutX="470.0" layoutY="156.0" mnemonicParsing="false" onAction="#handleAddAmountButtonAction" prefHeight="45.0" prefWidth="90.0" text="Add Amount" />
+      <Button fx:id="reportUsageButton" layoutX="471.0" layoutY="341.0" mnemonicParsing="false" onAction="#handleReportUsageButtonAction" prefHeight="45.0" prefWidth="88.0" text="Report Usage" />
+      <TextField fx:id="addAmountField" layoutX="411.0" layoutY="78.0" />
+      <TextField fx:id="reportUsageField" layoutX="411.0" layoutY="306.0" />
+      <TextField fx:id="addCostField" layoutX="411.0" layoutY="122.0" />
+      <Label layoutX="363.0" layoutY="82.0" text="Amount " />
+      <Label layoutX="375.0" layoutY="126.0" text="Cost" />
+      <Label layoutX="365.0" layoutY="310.0" text="Amount" />
+      <Button fx:id="backButton" layoutX="50.0" layoutY="341.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="45.0" prefWidth="71.0" text="Back" />
+   </children>
+</AnchorPane>

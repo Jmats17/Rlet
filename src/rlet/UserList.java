@@ -15,35 +15,34 @@ import java.io.*;
 
 public class UserList implements Serializable{
 
-    private ArrayList<User> userList;
+    private ArrayList<User> userList = new ArrayList<User>();
+    //private ResourceTracker resourceTracker;
     
     public UserList(){
         
-        
-      
         if(userList.isEmpty() || userList == null){
-            
             
             this.createTestUserList();
             
-            
         }
+        //resourceTracker = new ResourceTracker(userList);
         
-        //this.printUserList();
     }
-    
-    
-    
-    
+    /*
+    public ResourceTracker getResourceTracker(){
+        return resourceTracker;
+    }
+    */
     public void createTestUserList(){
-        userList = new ArrayList<User>();
-        for (int i = 0; i < 4; i++){
+       
+        for (int i = 0; i < 3; i++){
             String testUsername = "Test" + i;
             char[] testPassword = {'T', 'e', 's', 't'};
             userList.add(new Roommate(testUsername, testPassword));
         }
         System.out.println("Test UserList created");
-        //System.out.println("The UserList is: "+ userList);
+        
+        
     }
 
     public void printUserList(){
